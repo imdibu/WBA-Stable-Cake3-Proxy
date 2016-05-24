@@ -14,6 +14,7 @@
  */
 namespace App\Controller;
 
+use App\Services\Cake2Bootstrapper;
 use Cake\Controller\Controller;
 use Cake\Event\Event;
 

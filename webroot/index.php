@@ -24,6 +24,7 @@ if (php_sapi_name() === 'cli-server') {
         return false;
     }
 }
+require __DIR__ . '/coats_cake2.php';
 require dirname(__DIR__) . '/config/bootstrap.php';
 
 use Cake\Network\Request;
