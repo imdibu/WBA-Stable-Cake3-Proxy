@@ -1,0 +1,1046 @@
+/*
+-----------------------------------------------
+Grey Box Method - Layout CSS
+----------------------------------------------- */
+
+body {
+	background: #fff;
+	color: #333;
+	/*font-size: 1em;*/
+	font-family: Arial, Helvetica, sans-serif;	
+}
+
+#container {
+    background:#fff;
+    margin-left: 4%;
+    margin-right: 4%;
+    min-width: 0px;
+    width: 92%;
+    
+}
+
+#header{
+    background:none;
+}
+#header .top{
+    border-top: none;
+}
+#header img{
+ /*margin: 18px 35px;*/
+}
+#navigation{
+    background: url("../img/mnu-bg.jpg") repeat-x scroll 0 0 transparent;
+    font-family: Arial,Helvetica,sans-serif,"Arial MT";
+    height: 37px;
+    
+}
+#topnav li a {
+    display: block;
+    line-height: 37px;
+    padding: 0 16px;
+    text-transform: capitalize;
+    font-weight: 700;
+    color:#FFF;
+}
+#topnav li:hover {
+    background: url("../img/mnu-hov.jpg") repeat-x scroll left center transparent;
+}
+#topnav li:hover a {
+    color:#4e4c4c;
+}
+#topnav li:hover .head span {
+    background: url(none);
+}
+#topnav .sub ul li:hover a {
+    background: url("../img/mnu-bg.jpg") repeat-x scroll left center transparent;
+    color:#fff;
+}
+
+#content {
+    background-color: #FFF;
+}
+
+#welcomefrm {
+    background: url("../img/welcome-bg.jpg") no-repeat scroll 0 0 transparent;
+    height:711px;
+    margin: 0;
+}
+
+#welcome_cnt {
+    background: url("../img/welcome-cnt-bg.png") no-repeat scroll center center transparent;
+    float: right;
+    height: 166px;
+    margin: 13% 0 24%;
+    width: 520px;
+}
+
+.welcome_txt {
+    background: none repeat scroll 0 0 transparent;
+    float: left;
+    height: 146px;
+    margin: 10px;
+    width: 500px;
+}
+
+.welcome_txt h2 {
+    border-bottom: 1px dashed #FFFFFF;
+    background: none;
+    color: #FFFFFF;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 35px;
+    font-weight: normal;
+    margin: 0 15px 10px;
+    padding-bottom: 7px;
+    text-align: center;
+    width: 95%;
+}
+
+.welcome_txt p {
+    color: #FFFFFF;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 22px;
+    margin: 5px 15px;
+    text-align: center;
+    width: 95%;
+}
+
+/* anchors
+----------------------------------------------- */
+a {
+	color: #000;
+	text-decoration: none;
+}
+/*a:hover {
+	color:#333;
+}*/
+
+
+/* Top menu date, welcome etc
+----------------------------------------------- */
+#top-menu {
+    border-bottom: 1px solid #D7D7D7;
+    height: 23px;
+	margin: 0 1%;
+}
+
+.lan-pos {
+	display: inline;
+}
+.lan-pos select {
+    font-size: 95%;
+	border: none;
+}
+
+/* Logo
+----------------------------------------------- */
+
+.logo img{
+	margin:18px 35px;
+}
+/* Orders blue bg with title
+----------------------------------------------- */
+
+.tbl-title {
+	margin-top: 10px;
+	width:100%;
+	line-height: 36px;
+	font-family: 'Open Sans', sans-serif;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 600;
+	background-color:#29A9CB;
+}
+.tbl-title h1 {
+	/*background-color:#29A9CB;*/
+	background-image: url(../img/sprites.png);
+	background-repeat: no-repeat;
+}
+.tbl-title h1.odr-details{
+	background-position: 10px 10px;
+	padding-left:35px;
+}
+.tbl-title h1.odr-line{
+	font-family: 'Open Sans', sans-serif;
+	background-position: 10px -16px;
+	padding-left:35px;
+}
+.tbl-title-info {
+    margin-top: 10px;
+    width:100%;
+    line-height: 36px;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    background-color:#29A9CB;
+}
+.tbl-title-info h1 {
+    /*background-color:#29A9CB;*/
+    background-image: url(../img/sprites.png);
+    background-repeat: no-repeat;
+}
+.tbl-title-info h1.odr-details{
+    background-position: 10px 10px;
+    padding-left:35px;
+}
+.tbl-title-info h1.odr-line{
+    font-family: 'Open Sans', sans-serif;
+    background-position: 10px -16px;
+    padding-left:35px;
+}
+.tbl-WH-info {
+    margin-top: 10px;
+    width:100%;
+    line-height: 36px;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    background-color:#29A9CB;
+}
+.tbl-WH-info h1 {
+    /*background-color:#29A9CB;*/
+    background-image: url(../img/sprites.png);
+    background-repeat: no-repeat;
+}
+.tbl-WH-info h1.odr-details{
+    background-position: 10px 10px;
+    padding-left:35px;
+}
+.tbl-WH-info h1.odr-line{
+    font-family: 'Open Sans', sans-serif;
+    background-position: 10px -16px;
+    padding-left:35px;
+}	
+.tbl-title2 {
+	margin-top: 20px;
+	padding-left: 35px;
+	background: #29A9CB url(../img/sprites.png) 10px 10px no-repeat;
+	line-height: 36px;
+	font-family: 'Open Sans', sans-serif;
+	color: #fff;
+    font-size: 1em;
+    font-weight: 600;
+}
+.tbl-title3 {
+    background-image: none !important;
+}
+
+/* Table 1
+----------------------------------------------- */
+/*table.order-details tr td {
+	padding-left:30px;
+}*/
+
+table.order-details {
+	float: left;
+	width: 49.99%;
+	text-align: left;
+	border: #E1E1E1 1px solid;
+	color: #666666;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-align: left;
+}
+table.order-details tr > th {
+	width: 35%;
+    padding: 1% 0 1% 2%;
+	background: url(../img/th.png) left bottom repeat-x;
+	/*background-size: contain;*/
+/*	height:35px;*/
+	font: Arial, Helvetica, sans-serif;
+	border-bottom: #E1E1E1 1px solid;
+	vertical-align: top;
+	line-height:20px;
+	text-align: left;
+}
+table.order-details td label p{
+	height:64px; !important;
+	line-height:1.7em;
+}
+table.order-details tr > td {
+	width: 35%;
+	/*padding: 1% 0 1% 2%;*/
+	padding-left: 3%;
+	border-right: #E1E1E1 1px solid;
+	border-bottom: #E1E1E1 1px solid;
+    vertical-align: middle;
+	line-height: 120%;
+}
+table.order-details td input[type="text"] {
+	width: 60%;
+	height: 22px;
+	border: #E1E1E1 1px solid;
+    vertical-align: middle;
+	background: url(../img/txtbox.png) left top repeat-x;
+}
+.select2-search input[type="text"] {
+    width: 100% !important;
+    background: url("../img/select2.png") no-repeat scroll 100% -22px, -moz-linear-gradient(center bottom , white 85%, #EEEEEE 99%) repeat scroll 0 0 transparent !important;
+}
+table.order-details td textarea {
+	background: url(../img/txtbox.png) left top repeat-x;
+	width: 60%;
+	height: 57px;
+	border: #E1E1E1 1px solid;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;	
+}
+table.order-details table {
+	margin: 0;
+	padding: 0;
+    width: 100%;
+}
+table.order-details table tr > th,
+table.order-details table tr > td {
+	border-right: none;
+	padding-left: 4%;
+}
+table.order-details td input[type="radio"] {
+	width: 12px;
+	/*background: #29A9CB url(../img/sprites.png) no-repeat;*/
+	background: url(../img/sprites.png) no-repeat;
+	background-position: -145px -9px;
+
+}
+
+
+
+/* Table 2
+----------------------------------------------- */
+table.order-line {
+	width: 1178px;
+	text-align: center;
+	border: #E1E1E1 1px solid;
+	color: #666666;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	
+}
+table.order-line tr th {
+	background-color: #F4F4F4;
+	border-bottom: #E1E1E1 1px solid;
+	border-right: #E1E1E1 1px solid;
+	line-height: 30px;
+}
+table.order-line tbody  tr td{
+	margin: 0;
+	padding: 0;
+	background-color: #FFF;
+	border-bottom: #E1E1E1 1px solid;
+	border-right: #E1E1E1 1px solid;
+	height: 30px;
+	vertical-align: middle;
+}
+table.order-line tbody  td input[type="text"] {
+	width: 80%;
+	height: 22px;
+	line-height: 22px;
+	border: #E1E1E1 1px solid;
+    vertical-align: middle;
+	background: url(../img/txtbox.png) left top repeat-x;
+}
+table.order-line tbody td select {
+	height: 23px;
+	border: #E1E1E1 1px solid;
+	vertical-align: middle;
+}
+
+.scrollTableContainer {
+	width:100%;height:auto; margin:0;
+}
+.btn {
+	float: right;
+	margin-top: 20px;
+	margin-left: 20px;
+	width: 101px;
+	height: 34px;
+	background: url(../img/sprites.png) 0 -146px no-repeat;
+	border: none;
+	cursor: pointer;
+	color: #fff;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	font-size: 14px;
+}
+.btn:hover {
+	background-position: -111px -146px;
+}
+.btn:active {
+	background-position: -222px -146px;
+}
+.del {
+	background: url("../img/delete.gif") no-repeat;
+	border: none !important;
+	width: 15px;
+	height: 14px;
+	cursor: pointer !important;
+	float : left;
+	margin-left : 25px;
+}
+/*.del {
+	background: url("../img/sprites.png") no-repeat scroll 0 -104px transparent;
+	border: none;
+	width: 13px;
+	height: 14px;
+	cursor: pointer;
+}*/
+.col {
+	margin-right: 10px;
+	background: url("../img/sprites.png") no-repeat scroll -33px -108px transparent;
+	border: none;
+	width: 12px;
+	height: 9px;
+	cursor: pointer;
+}
+.edit {
+	margin-right: 10px;
+	background: url("../img/sprites.png") no-repeat scroll -97px -103px transparent;
+	border: none;
+	width: 17px;
+	height: 16px;
+	cursor: pointer;
+}
+#footer{
+	background-image: url(../img/mnu-bg.jpg);
+	background-repeat: repeat-x;
+	background-position: 0px 0px;	
+	width:100%;
+        margin:none;
+	margin-top:20px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#fff;
+	text-align:center;
+	line-height:30px;
+        border: 0;
+        padding: 0;        
+}
+#footer a{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#fff;
+}
+table.order-line #header-fixed { 
+    position: fixed; 
+    top: 0px; display:none;
+}
+
+
+/* ORDER SUMMARY
+----------------------------------------------- */
+
+.cust-info {
+    background-position: 10px -42px;
+    padding-left: 30px;
+}
+table.order-details td select {
+	width: 60%;
+	height: 22px;
+	border: #E1E1E1 1px solid;
+    vertical-align: middle;
+	background: url(../img/txtbox.png) left top repeat-x;
+}
+
+
+
+
+/* boxes
+----------------------------------------------- */
+.box {
+	background:#fff;
+	margin-bottom:20px;
+}
+.box h2 {
+	color:#fff;
+	
+	background-color:#29A9CB;
+	background-image: url(../img/sprites.png);
+	background-repeat: no-repeat;
+
+}
+.box h2 a,
+.box h2 a.visible {
+	background-image: url(../img/sprites.png);
+	background-repeat: no-repeat;
+	background-position: 97% 50%;
+}
+.grid_4 .box h2 a {
+	background-position: 97% 50%;
+}
+.grid_5 .box h2 a {
+	background-position: 98% 50%;
+}
+.grid_12 .box h2 a {
+	background-position: 99% 50%;
+}
+
+
+.box h2 a.hidden,
+.box h2 a.hidden:hover {
+	background-image: url("../img/switch_plus.gif");
+}
+.box h2 a:hover {
+}
+.block {
+	padding-top:10px;
+}
+div.menu {
+	padding:0;
+}
+div.menu h2 {
+	margin:0;
+}
+div.menu .block {
+	padding-top:0;
+}
+
+
+/* Accordian
+----------------------------------------------- */
+.toggler {
+	color: #222;
+	margin: 0;
+	padding: 2px 5px;
+	background: #eee;
+	font-size:1.1em;
+	font-weight: normal;
+	font-weight:800;
+}
+.toggler  img{
+	display:inline;
+}
+.element h4 {
+	margin: 0;
+	padding:4px;
+	line-height:1.2em;
+}
+.element p {
+	margin: 0;
+	padding: 4px;
+}
+.float-right {
+	padding:10px 20px;
+	float:right;
+}
+
+#accordian-block {
+	padding-bottom:10px;
+}
+
+/* Submit cancel Button */
+.submit .submit {
+	float: right;
+	margin-top: 20px;
+	margin-left: 20px;
+	width: 101px;
+	height: 34px;
+	background: url(../img/sprites.png) 0 -146px no-repeat !important;
+	border: none !important;
+	cursor: pointer !important;
+	color: #fff !important;
+	font-family: 'Open Sans', sans-serif !important;
+	font-weight: 700 !important;
+	font-size: 13px!important;
+}
+.submit .cancel {
+	float: right;
+	margin-top: 20px;
+	margin-left: 20px;
+	width: 101px;
+    /*width: 130px;*/
+	height: 34px;
+	background: url(../img/sprites.png) 0 -146px no-repeat;
+	border: none !important;
+	cursor: pointer !important;
+	color: #fff !important;
+	font-family: 'Open Sans', sans-serif !important;
+	font-weight: 700 !important;
+	font-size: 13px !important;
+}
+.submit .cancel:hover {
+    background-position: -111px -146px;
+    }
+.submit .cancel:focus {
+    background-position: -222px -146px;
+    }
+ 
+ .submit #cancel1 {
+	padding: 9px 0 0 2px;
+    text-align: center;
+}
+
+/* Table 3 Courier Tracking 
+----------------------------------------------- */
+.tbl-title {
+    color: #FFFFFF;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 36px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.cust-info {
+    background-position: 10px -42px;
+    padding-left: 30px;
+}
+
+table.courier-details {
+	float: left;
+	width: 99.99%;
+	text-align: left;
+	border: #E1E1E1 1px solid;
+	color: #666666;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-align: left;
+}
+table.courier-details tr > th {
+	width: 13%;
+    padding: 1% 0 1% 2%;
+	font: Arial, Helvetica, sans-serif;
+	vertical-align: top;
+	line-height:23px;
+	text-align: left;
+}
+table.courier-details td label p{
+	height:64px; !important;
+	line-height:1.7em;
+}
+table.courier-details tr > td {
+	width: 31%;
+	padding-left: 3%;
+    vertical-align: middle;
+	line-height: 120%;
+}
+table.courier-details td input[type="text"] {
+	//width: 25%;
+	//height: 30px;
+	border: #E1E1E1 1px solid;
+    vertical-align: middle;
+	background: url(../img/txtbox.png) left top repeat-x;
+}
+table.courier-details table {
+	margin: 0;
+	padding: 0;
+    width: 100%;
+}
+
+
+
+
+/**************style for bulk upload help popup**/
+.help{
+     
+     background-position: 0 -134px !important;
+    padding: 0 9px 3px 16px;
+}
+.help-note, .help-note-title{
+    font-size: 10pt;
+}
+
+#pop-up-text{
+        margin: 0;
+        padding: 0;
+        font-weight: normal;
+
+      }
+      /* HOVER STYLES */
+#pop-up {
+        display: none;
+        position: absolute;
+        width: 280px;
+        padding: 10px;
+        background: #FFFFFF;
+        color: #000000;
+        border: 1px solid #1a1a1a;
+        font-size: 90%;
+        float:right
+ }
+  #overlay_form{
+position: absolute;
+border: 5px solid gray;
+padding: 10px;
+background: white;
+width: 270px;
+height: 100px;
+}
+#pop{
+display: block;
+border: 1px solid gray;
+width: 65px;
+text-align: center;
+padding: 6px;
+border-radius: 5px;
+text-decoration: none;
+margin: 0 auto;
+}
+
+/****** Order Entry page design added************/
+.scroll-pane {
+    overflow: auto;
+    padding-bottom: 30px;
+    width: 100%;
+}
+table.order-line tr th {
+    background-color: #29A9CB;
+    border-bottom: 1px solid #E1E1E1;
+    border-right: 1px solid #E1E1E1;
+    line-height: 20px;
+    min-width: 55px;
+    color:#fff;
+}
+
+table.order-details {
+    border: 1px solid #E1E1E1;
+    color: #666666;
+    float: left;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    text-align: left;
+    width: 99.99%;
+}
+table.order-details tr > th {
+    background: url("../img/th.png") repeat-x scroll left bottom transparent;
+    border-bottom: 1px solid #E1E1E1;
+    line-height: 20px;
+    padding: 1% 0 1% 2%;
+    text-align: left;
+    vertical-align: top;
+    width: 16%;
+}
+table{
+    border-collapse: none;
+}
+
+table.order-details tr > td {
+    border-bottom: 1px solid #E1E1E1;
+    border-right: 1px solid #E1E1E1;
+    line-height: 120%;
+    vertical-align: middle;
+    width: 25%;
+}
+.submit .cancel-big {
+    background: url("../img/sprites.png") no-repeat scroll -343px -146px transparent;
+    border: medium none !important;
+    color: #FFFFFF !important;
+    cursor: pointer !important;
+    float: right;
+    font-family: 'Open Sans',sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    height: 34px;
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 130px;
+}
+.container .grid_12 {
+    width: 100%;
+}
+
+table.order-line tbody td input[type="text"] {
+    background: url("../img/txtbox.png") repeat-x scroll left top transparent;
+    border: 1px solid #E1E1E1;
+    height: 24px;
+    line-height: 22px;
+    margin: 5px;
+    vertical-align: middle;
+    width: 70%;
+}
+table.order-line tbody td select {
+    border: 1px solid #E1E1E1;
+    height: 30px;
+    margin: 5px;
+    vertical-align: middle;
+    width: 94%;
+}
+
+table.order-details td select {
+    background: url("../img/txtbox.png") repeat-x scroll left top transparent;
+    border: 1px solid #E1E1E1;
+    height: 27px;
+    margin: auto;
+    vertical-align: middle;
+    width: 64%;
+}
+
+table.order-line tbody td select {
+    border: 1px solid #E1E1E1;
+    height: 28px;
+    margin: 5px;
+    vertical-align: middle;
+    width: 98px;
+}
+#order_table #t1:scroller{
+    width:101%;
+}
+#recs-pp ul {
+    top:-13px;
+}
+
+/* Multiple Promised Button */
+a.btn-long {
+    background: url("../img/sprites.png") no-repeat scroll 0 -245px transparent;
+    border: medium none;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: right;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    height: 34px;
+    margin-left: 20px;
+    margin-top: 20px;
+	padding-top: 8px;
+    text-align: center;
+    width: 359px;
+}
+a.btn-long:hover {
+    background-position: 0px -289px;
+	color:#fff;
+}
+a.btn-long:active {
+    background-position: 0px -333px;
+}
+
+/* upload error line button */
+.btn-medium {
+    background: url("../img/sprites.png") no-repeat scroll -379px -245px transparent;
+    border: medium none;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: right;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    height: 34px;
+    margin-left: 20px;
+    margin-top: 20px;
+	padding-top: 8px;
+    text-align: center;
+    width: 145px;
+}
+.btn-medium :hover {
+    background-position: -379px -289px;
+}
+.btn-medium :active {
+    background-position: -379px -333px;
+}
+
+.btn-medium-new {
+    background: url("../img/sprites_new.png") no-repeat scroll -545px -245px transparent;
+    border: medium none;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: right;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    height: 34px;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding-top: 8px;
+    text-align: center;
+    width: 205px;
+}
+
+
+.edit-image{
+  	margin-right: 10px;
+	background: url("../img/sprites.png") no-repeat scroll -97px -103px transparent !important;
+	border: none !important;
+	width: 17px;
+    float: left;
+	height: 16px;
+	cursor: pointer !important;
+	margin-left: 30px;
+}
+/*.del {
+	background: url("../img/sprites.png") no-repeat scroll 0 -104px transparent !important;
+	border: none !important;
+	width: 13px;
+	height: 14px;
+	cursor: pointer !important;
+	float : left;
+	margin-left : 15px;
+}*/
+
+.promised_delivery {
+    border-bottom: 1px solid #E1E1E1;
+    padding: 1px 0;
+    width: 100%;
+}
+.cannot-find-order {
+    
+    padding:0 0 0 450px;
+    
+}
+
+#sample-right{
+    color: #FFFFFF;
+    float: right;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    line-height: 17px;
+    margin: 12px 36px;
+    font-weight :Bold;
+}
+
+/*** Outstanding Upload Draft List****************/
+
+
+table.order-line {
+    border: 1px solid #E1E1E1;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    text-align: center;
+    width: 100%;
+}
+
+.upload {
+	margin-bottom: 10px;
+}
+
+.plus {
+    background-image: url(../img/plus.png) !important;
+	background-position: 99% center;
+	background-repeat: no-repeat;
+}
+.minus {
+    background-image: url(../img/minus.png);
+	background-position: 99% center;
+	background-repeat: no-repeat;
+}
+.tbl-toggle {
+	clear: both;
+        padding-top: 10px;
+}
+
+/****************Outstanding order*********************/
+.order-details a:hover{
+color:none;
+}
+.select2-container .select2-results li{
+    _float:left;
+}
+
+
+.title {
+    background: none repeat scroll 0 0 #29A9CB !important;
+    font-weight: bold;
+    padding: 10px;
+    color: white;
+    text-transform: uppercase;
+}
+.actions{
+    background: none repeat scroll 0 0 white !important;
+    padding: 10px;
+    color: black;
+    text-transform: uppercase;
+}
+.fixme th{
+    line-height: 30px !important;
+   
+}
+.mandatory-field{
+    font-family: 'Open Sans', sans-serif;
+    background-position: 10px -16px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/*
+.fixedHeader tr {
+    display: block;
+    width: 100%;
+    _position: fixed;
+}
+.fixedHeader th {
+    width: 60px;
+}
+ #action{
+    width: 5%;
+}
+ #line{
+    width: 5%;
+}
+ #material{
+    width: 9%;
+}
+ #art{
+    width: 11%;
+}
+ #brd{
+    width: 8%;
+}
+ #tit{
+    width: 8%;
+}
+ #leh{
+    width: 8%;
+}
+ #fih{
+    width: 8%;
+}
+ #she{
+    width: 13%;
+}
+ #quy{
+    width: 4%;
+}
+ #ady{
+    width: 6.7%;
+}
+ #hide_date{
+    width: 12%;
+}
+.fixedHeader th:nth-child(3) {
+    width: 130px;
+}
+.scrollContent {
+    width: 100%;
+    height: 300px;
+    overflow-y: auto;
+    display: block;
+}
+.norecords{
+    padding-left: 405px;
+    
+}
+*/
+
+/*********Outstanding Pagination*********/
+
+  #recs-pp{
+position: relative !important;
+}
+ #recs-pp ul{
+position:absolute !important;
+bottom:inherit !important;
+right:0 !important;
+left:inherit !important;
+top:-22px !important;
+width:20px;
+}
+.terms-title {
+	width:100%;
+	line-height: 36px;
+	font-family: 'Open Sans', sans-serif;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 600;
+        background-image: url(../img/mnu-bg.jpg);
+	background-repeat: repeat-x;
+	background-position: 0px 0px;
+        margin:none; 
+       padding-left:5px;               
+}
+.readterms a{
+    color:#FF0000;
+}

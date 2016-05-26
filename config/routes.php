@@ -55,6 +55,7 @@ Router::scope('/', function (RouteBuilder $routes) {
      */
 //    $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
     $routes->connect('/*', ['controller' => 'Proxy', 'action' => 'reroute']);
+    $routes->connect('/*', ['controller' => 'Proxy', 'action' => 'reroute']);
 
     /**
      * Connect catchall routes for all controllers.

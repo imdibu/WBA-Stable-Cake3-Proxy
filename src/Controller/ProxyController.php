@@ -14,7 +14,7 @@ class ProxyController extends AppController
 {
     public function reroute()
     {
-        $this->viewBuilder()->layout('empty');
-        $this->set('content_for_layout', Cake2Bootstrapper::run(['layout' => false]));
+        Cake2Bootstrapper::run();
+        die();
     }
 }

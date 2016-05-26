@@ -1,0 +1,29 @@
+#recs-pp{
+	margin-right:3px;
+	float:left;
+}
+#recs-pps{
+	background: url(../img/arrow_down.gif) no-repeat 3px 6px;
+	padding:3px 3px 3px 14px;
+	cursor:pointer;
+}
+#recs-pp ul{
+	display:none;
+	margin-top:2px;
+	border:1px #000 solid;
+	background-color:#FFF;
+	padding:3px;
+}
+#recs-pp ul li{
+	margin-top:3px;
+	padding:2px;
+}
+#recs-pp ul li:first-child{
+	margin:0;
+}
+#recs-pp ul li:hover{
+	background-color:orange;
+}
+#recs-pps:hover ul{
+	display:block;
+}

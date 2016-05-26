@@ -1,0 +1,48 @@
+table.order-line tr th {
+    background-color: #aaa !important;
+    border-bottom: 1px solid #E1E1E1;
+    border-right: 1px solid #E1E1E1;
+    line-height: 20px;
+    min-width: 55px;
+    color: #fff;
+}
+
+/* Table 2
+----------------------------------------------- */
+table.order-line {
+	width: 100%;
+	text-align: center;
+	border: #E1E1E1 1px solid;
+	color: #666666;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	
+}
+table.order-line tr th {
+	background-color: #F4F4F4;
+	border-bottom: #E1E1E1 1px solid;
+	border-right: #E1E1E1 1px solid;
+	line-height: 30px;
+}
+table.order-line tbody  tr td{
+	margin: 0;
+	padding: 0;
+	background-color: #FFF;
+	border-bottom: #E1E1E1 1px solid;
+	border-right: #E1E1E1 1px solid;
+	height: 30px;
+	vertical-align: middle;
+}
+table.order-line tbody  td input[type="text"] {
+	width: 80%;
+	height: 22px;
+	line-height: 22px;
+	border: #E1E1E1 1px solid;
+    vertical-align: middle;
+	background: url(../img/txtbox.png) left top repeat-x;
+}
+table.order-line tbody td select {
+	height: 23px;
+	border: #E1E1E1 1px solid;
+	vertical-align: middle;
+}

@@ -18,9 +18,14 @@ class Cake2Bootstrapper
 {
     public static function run(array $additional = [])
     {
-        ob_start();
         $Dispatcher = new CDispatcher();
         $Dispatcher->dispatch(new CakeRequest(), new CakeResponse(array('charset' => CConfigure::read('App.encoding'))), $additional);
+    }
+
+    public static function runGetOutput(array $additional = [])
+    {
+        ob_start();
+        self::run($additional);
         return ob_get_clean();
     }
 }

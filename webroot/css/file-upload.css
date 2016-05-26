@@ -1,0 +1,360 @@
+@charset "utf-8";
+/* CSS Document */
+#upload {
+	width: 524px;
+	height:222px;
+	margin:150px auto;
+	background:url(../img/bg-upload-box.png) repeat-x;
+	border:1px solid #E5E6E6;
+}
+#upload_head {
+	float:left;
+	background:#29A9CB;
+	width: 524px;
+	height:50px;
+}
+#upload_head h1 {
+	text-align:center;
+	font-size:13px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#FFFFFF;
+	font-style:normal;
+	padding:14px;
+}
+
+#FileUpload {
+    position:relative;
+}
+
+#BrowserVisible {
+    position: absolute;
+    top: 70px;
+    z-index: 0;
+    background:url(../img/btn-browser.png) 100% 1px no-repeat;
+    width:385px;
+    height:33px;
+    cursor: pointer;
+}
+
+#BrowserVisible1 {
+    position: absolute;
+    top: 70px;
+    z-index: 0;
+    background:url(../img/btn-browser-tur.png) 100% 1px no-repeat;
+    width:385px;
+    height:33px;
+    cursor: pointer;
+}
+
+#BrowserVisible2 {
+    position: absolute;
+    top: 70px;
+    z-index: 0;
+    background:url(../img/btn-browser-spa.png) 100% 1px no-repeat;
+    width:385px;
+    height:33px;
+    cursor: pointer;
+}
+
+#BrowserVisible3 {
+    position: absolute;
+    top: 70px;
+    z-index: 0;
+    background:url(../img/btn-browser-pol.jpg) 100% 1px no-repeat;
+    width:385px;
+    height:33px;
+    cursor: pointer;
+}
+
+#BrowserVisible4 {
+    position: absolute;
+    top: 70px;
+    z-index: 0;
+    background:url(../img/btn-browser-bul.jpg) 100% 1px no-repeat;
+    width:385px;
+    height:33px;
+    cursor: pointer;
+}
+
+#BrowserVisible5 {
+    position: absolute;
+    top: 70px;
+    z-index: 0;
+    background:url(../img/browse_por.png) 100% 1px no-repeat;
+    width:385px;
+    height:33px;
+    cursor: pointer;
+}
+
+#FileField {
+    width:250px;
+    margin-right:85px;
+    padding: 6px;
+    font-size: 13px;
+    background: #fff url('http://i.stack.imgur.com/CGQD7.gif') top left repeat-x;
+    border: 1px solid #d5d5d5;
+   color: #333;
+   border-radius: 4px 4px 4px 4px !important;
+   height:20px;
+}
+#filename {
+    position:relative;
+    top: 30px;
+    left: 0px;
+    width:385px;
+    height:40px;
+    text-align: right;
+    -moz-opacity:0;
+    filter:alpha(opacity: 0);
+    opacity: 0;
+    z-index: 2;
+    cursor: pointer;	
+}
+#txtbox {
+	width:405px;
+	height:107px;
+	margin:0px auto;
+	
+}
+#txtbox p {
+    position: relative;
+    top: 30px;
+    width:100%;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:13px;
+    color:#717173;
+    padding:5px 0;
+}
+#txtbox p span {
+	color:#005DA9;
+}
+.btn_upload {
+	float:right;
+	height: 29px;
+	width: 113px;
+	margin-right:125px;
+	background: #17468F;
+	border:1px solid #0061B0;
+	border-radius:10px 10px 10px 10px;
+	-moz-border-radius:10px 10px 10px 10px;
+	-webkit-border-radius:10px 10px 10px 10px;
+	-o-border-radius:10px 10px 10px 10px;
+	-khtml-border-radius:10px 10px 10px 10px;
+        position: relative;
+        top: 40px;
+}
+.btn-submit-upload {
+	background:none;
+	border:none;
+	outline:none;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	color:#fff;
+	width: 113px;
+	height: 29px;
+}
+
+
+.file_upload {
+	float:left;
+	background:#F3F3F3;
+	width:274px;
+	height:29px;
+	border:1px solid #DDD;
+	margin:40px 12px 0px 0px;
+}
+.file_upload input {
+	width:270px;
+	height:26px;
+	background:none;
+	outline:none;
+	border:none;
+	margin:2px;
+	float:left;
+}
+.btn_browser {
+	float:left;
+	width: 113px;
+	height: 29px;
+        background: #17468F;
+	border:1px solid #0061B0;
+	border-radius:10px 10px 10px 10px;
+	-moz-border-radius:10px 10px 10px 10px;
+	-webkit-border-radius:10px 10px 10px 10px;
+	-o-border-radius:10px 10px 10px 10px;
+	-khtml-border-radius:10px 10px 10px 10px;
+	margin:40px 0px 0px 0px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	color:#fff;
+}
+.btn_browser button {
+	background:none;
+	border:none;
+	outline:none;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	color:#fff;
+	width: 113px;
+	height: 29px;
+}
+
+#file_mapping {
+	width: 100%;
+	height:484px;
+	margin:10px auto;
+	_background:url(../img/file-mapping-bg.jpg) repeat-x;
+	border:1px solid #E5E6E6;
+}
+#mapping_head {
+	float:left;
+	background:#29A9CB;
+	width: 100%;
+	height:40px;
+}
+#mapping_head h1 {
+	text-align:center;
+	font-size:13px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#FFFFFF;
+	font-style:normal;
+	padding:14px;
+}
+#mapping_grid {
+	width:80%;
+	margin:50px auto;
+	text-align:center;
+}
+#mapping_grid table {
+	float:left;
+	width:100%;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+}
+#mapping_grid table td {
+	vertical-align:middle;
+	padding:5px 10px;
+	text-align:left;
+}
+#mapping_grid table .map_select {
+	width:246px;
+	height: 31px;
+	_background:url(../img/file-mapping-select.png) no-repeat center;
+	overflow:hidden;
+	font-weight:normal;
+}
+#mapping_grid table .map_select select {
+	_border: 0;
+	color:#717173;
+	background:transparent;
+	font-size:12px;
+	font-weight:normal;
+	height: 30px;
+	width:200px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	opacity:1;
+	padding:7px 5px;
+}
+.btn_mapping {
+	float:left;
+	height: 29px;
+	margin-left:220px;
+	background: #17468F;
+	border:1px solid #0061B0;
+	border-radius:10px 10px 10px 10px;
+	-moz-border-radius:10px 10px 10px 10px;
+	-webkit-border-radius:10px 10px 10px 10px;
+	-o-border-radius:10px 10px 10px 10px;
+	-khtml-border-radius:10px 10px 10px 10px;
+	text-align:center;
+	vertical-align:middle;
+	padding:0px 7px;
+}
+.btn_mapping button {
+	background:none;
+	border:none;
+	outline:none;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	color:#fff;
+	height: 29px;
+}
+@media screen and (max-width: 640px) {
+	#mapping_grid {
+		width:100%;
+		margin:10px auto;
+	}
+	#mapping_grid table {
+		float:none;
+		width:90%;
+		margin:10px auto;
+	}
+	#mapping_grid table td {
+		padding:5px;
+	}
+	#mapping_grid table .map_select {
+		float:none;
+		width:150px;
+	}
+	#mapping_grid table .map_select select {
+		width:150px;
+	}
+	.btn_mapping {
+		float:none;
+		margin:5px auto;
+	}
+}
+@media screen and (max-width: 480px) {
+	#upload {
+		float:none;
+		width:100%;
+	}
+	#upload_head {
+		width:100%;
+		height:60px;
+	}
+	#txtbox {
+		float:none;
+		width:100%;
+	}
+	#txtbox p {
+		width:80%;
+		margin-left:20px;
+	}
+	.file_upload {
+		width:80%;
+		margin:5px 20px;
+	}
+	.btn_browser {
+		float:none;
+		position:absolute;
+		margin:114px 5px 5px 20px;
+	}
+	.btn_upload {
+		float:none;
+		position:absolute;
+		margin:150px 5px 5px 20px;
+	}
+	#mapping_grid {
+		width:90%;
+		margin:20px auto;
+	}
+	#mapping_grid table {
+		float:none;
+		width:70%;
+		margin:20px auto;
+	}
+	#mapping_grid table td {
+		padding:3px;
+	}
+	#mapping_grid table .map_select {
+		float:none;
+		width:100px;
+	}
+	#mapping_grid table .map_select select {
+		width:100px;
+	}
+}
+
