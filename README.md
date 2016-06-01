@@ -63,3 +63,16 @@ Copy configuration files for cake2 application
 cp -r build/legacy/config/* legacy/Project/app/Config/
 ```
 
+Create cache folders
+
+```bash
+mkdir -p legacy/Project/tmp/cache/persistent
+mkdir -p legacy/Project/tmp/cache/models
+```
+
+Create JS and CSS folders
+
+```bash
+mkdir -p legacy/Project/tmp/cache/css
+mkdir -p legacy/Project/tmp/cache/js
+```
