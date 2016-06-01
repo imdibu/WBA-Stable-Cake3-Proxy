@@ -1,8 +1,5 @@
 <?php
-namespace App\Model\Entity\Base;
-
-use Cake\ORM\Entity;
-
+namespace App\Model\Entity;
 /**
  * BulkOrderLine Entity.
  *
