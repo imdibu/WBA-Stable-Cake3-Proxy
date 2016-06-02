@@ -1,16 +1,6 @@
 <?php
-namespace App\Model\Table\Base;
+namespace App\Model\Table;
 
-use App\Model\Entity\Uom;
-use Cake\ORM\Query;
-use Cake\ORM\RulesChecker;
-use Cake\ORM\Table;
-use Cake\Validation\Validator;
-
-/**
- * Uom Model
- *
- */
 class UomTable extends CoatsTable
 {
 
@@ -27,24 +17,5 @@ class UomTable extends CoatsTable
         $this->table('coats_uom');
         $this->displayField('id');
         $this->primaryKey('id');
-    }
-
-    /**
-     * Default validation rules.
-     *
-     * @param \Cake\Validation\Validator $validator Validator instance.
-     * @return \Cake\Validation\Validator
-     */
-    public function validationDefault(Validator $validator)
-    {
-        $validator
-            ->integer('id')
-            ->allowEmpty('id', 'create');
-
-        $validator
-            ->requirePresence('uom', 'create')
-            ->notEmpty('uom');
-
-        return $validator;
     }
 }

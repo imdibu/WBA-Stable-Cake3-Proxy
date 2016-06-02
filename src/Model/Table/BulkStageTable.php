@@ -1,11 +1,5 @@
 <?php
-namespace App\Model\Table\Base;
-
-use App\Model\Entity\BulkStage;
-use Cake\ORM\Query;
-use Cake\ORM\RulesChecker;
-use Cake\ORM\Table;
-use Cake\Validation\Validator;
+namespace App\Model\Table;
 
 /**
  * BulkStage Model
@@ -25,23 +19,5 @@ class BulkStageTable extends CoatsTable
         parent::initialize($config);
 
         $this->table('coats_bulk_stage');
-    }
-
-    /**
-     * Default validation rules.
-     *
-     * @param \Cake\Validation\Validator $validator Validator instance.
-     * @return \Cake\Validation\Validator
-     */
-    public function validationDefault(Validator $validator)
-    {
-        $validator
-            ->integer('id')
-            ->allowEmpty('id');
-
-        $validator
-            ->allowEmpty('stage_Name');
-
-        return $validator;
     }
 }

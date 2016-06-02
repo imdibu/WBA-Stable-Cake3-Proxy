@@ -1,16 +1,6 @@
 <?php
-namespace App\Model\Table\Base;
+namespace App\Model\Table;
 
-use App\Model\Entity\CustomercareLog;
-use Cake\ORM\Query;
-use Cake\ORM\RulesChecker;
-use Cake\ORM\Table;
-use Cake\Validation\Validator;
-
-/**
- * CustomercareLog Model
- *
- */
 class CustomercareLogTable extends CoatsTable
 {
 
@@ -25,35 +15,5 @@ class CustomercareLogTable extends CoatsTable
         parent::initialize($config);
 
         $this->table('coats_customercare_log');
-    }
-
-    /**
-     * Default validation rules.
-     *
-     * @param \Cake\Validation\Validator $validator Validator instance.
-     * @return \Cake\Validation\Validator
-     */
-    public function validationDefault(Validator $validator)
-    {
-        $validator
-            ->allowEmpty('Report_Name');
-
-        $validator
-            ->allowEmpty('Actions');
-
-        $validator
-            ->allowEmpty('Records');
-
-        $validator
-            ->allowEmpty('Message');
-
-        $validator
-            ->dateTime('Cr_Date')
-            ->allowEmpty('Cr_Date');
-
-        $validator
-            ->allowEmpty('filename');
-
-        return $validator;
     }
 }

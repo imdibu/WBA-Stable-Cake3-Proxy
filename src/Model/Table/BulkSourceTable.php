@@ -1,16 +1,6 @@
 <?php
-namespace App\Model\Table\Base;
+namespace App\Model\Table;
 
-use App\Model\Entity\BulkSource;
-use Cake\ORM\Query;
-use Cake\ORM\RulesChecker;
-use Cake\ORM\Table;
-use Cake\Validation\Validator;
-
-/**
- * BulkSource Model
- *
- */
 class BulkSourceTable extends CoatsTable
 {
 
@@ -25,23 +15,5 @@ class BulkSourceTable extends CoatsTable
         parent::initialize($config);
 
         $this->table('coats_bulk_source');
-    }
-
-    /**
-     * Default validation rules.
-     *
-     * @param \Cake\Validation\Validator $validator Validator instance.
-     * @return \Cake\Validation\Validator
-     */
-    public function validationDefault(Validator $validator)
-    {
-        $validator
-            ->integer('id')
-            ->allowEmpty('id');
-
-        $validator
-            ->allowEmpty('Source_Name');
-
-        return $validator;
     }
 }

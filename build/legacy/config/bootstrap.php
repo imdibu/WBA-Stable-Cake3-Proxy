@@ -101,7 +101,7 @@ Cache::config('default', array('engine' => 'File'));
 /**
  * The settings below can be used to set additional paths to models, views and controllers.
  *
- * App::build(array(
+ * CApp::build(array(
  *     'Model'                     => array('/path/to/models', '/next/path/to/models'),
  *     'Model/Behavior'            => array('/path/to/behaviors', '/next/path/to/behaviors'),
  *     'Model/Datasource'          => array('/path/to/datasources', '/next/path/to/datasources'),
@@ -252,9 +252,9 @@ switch (CConfigure::read('env')) {
         define('SAP_IMM_ORDER_DATA_URL', 'http://172.18.2.149:57500/wba/api/OrderUpdateScope?response=immediate');
         define('SAP_MATERIAL_CHECK_URL', 'http://172.18.2.149:57500/wba/api/MaterialStatus');
 		define('SYSTEM_INTEGRATION_ROOT',dirname(dirname(COATS2_ROOT)));
-		define('SHARED_BACKEND_FAILED_FOLDER',TMP . 'backend_uploads/failed_files/');
+		define('SHARED_BACKEND_FAILED_FOLDER',COATS2_TMP . 'backend_uploads/failed_files/');
 		define('SHARED_SFTP_FAILED_FOLDER',SYSTEM_INTEGRATION_ROOT.'ftproot/Coats/customer_sftp/failed_files');
-		define('FEATURE_UPLOAD_PATH',APP.'webroot/files/feature_uploads/');
+		define('FEATURE_UPLOAD_PATH',COATS2_APP.'webroot/files/feature_uploads/');
 		//new Exception logs
 		define('EXCEPTION_LOG_URL','http://10.14.14.8:8080/ExceptionHandlingWs/services/ExceptionHandlingSerivceWs/LogException');
 		define('EXCEPTION_RETREVAL_URL','http://10.14.14.8:8080/ExceptionHandlingWs/services/ExceptionHandlingSerivceWs/ReadExceptionLogs');
@@ -305,9 +305,9 @@ switch (CConfigure::read('env')) {
         define('SAP_IMM_ORDER_DATA_URL', 'http://172.18.2.149:57500/WebServicePortal/execute?service=OrderUpdateScopeHK&response=immediate');
         define('SAP_MATERIAL_CHECK_URL', 'http://172.18.2.149:57500/wba/api/MaterialStatus');
 		define('SYSTEM_INTEGRATION_ROOT',dirname(dirname(COATS2_ROOT)));
-		define('SHARED_BACKEND_FAILED_FOLDER',TMP . 'backend_uploads/failed_files/');
+		define('SHARED_BACKEND_FAILED_FOLDER',COATS2_TMP . 'backend_uploads/failed_files/');
 		define('SHARED_SFTP_FAILED_FOLDER',SYSTEM_INTEGRATION_ROOT.'ftproot/Coats/customer_sftp/failed_files');
-		define('FEATURE_UPLOAD_PATH',APP.'webroot/files/feature_uploads/');
+		define('FEATURE_UPLOAD_PATH',COATS2_APP.'webroot/files/feature_uploads/');
 	//new exception logs
 		define('EXCEPTION_LOG_URL','http://adaziewbap01.cloudapp.net/ExceptionHandlingWs/services/ExceptionHandlingSerivceWs/LogException');
 	    define('EXCEPTION_RETREVAL_URL','http://adaziewbap01.cloudapp.net/ExceptionHandlingWs/services/ExceptionHandlingSerivceWs/ReadExceptionLogs');
@@ -359,9 +359,9 @@ switch (CConfigure::read('env')) {
         define('SAP_IMM_ORDER_DATA_URL', 'http://172.18.2.149:57500/wba/api/OrderUpdateScope?response=immediate');
         define('SAP_MATERIAL_CHECK_URL', 'http://172.18.2.149:57500/wba/api/MaterialStatus');
 		define('SYSTEM_INTEGRATION_ROOT',dirname(dirname(COATS2_ROOT)));
-		define('SHARED_BACKEND_FAILED_FOLDER',TMP . 'backend_uploads/failed_files/');
+		define('SHARED_BACKEND_FAILED_FOLDER',COATS2_TMP . 'backend_uploads/failed_files/');
 		define('SHARED_SFTP_FAILED_FOLDER',SYSTEM_INTEGRATION_ROOT.'ftproot/Coats/customer_sftp/failed_files');
-		define('FEATURE_UPLOAD_PATH',APP.'webroot/files/feature_uploads/');
+		define('FEATURE_UPLOAD_PATH',COATS2_APP.'webroot/files/feature_uploads/');
 		//Exception logs
 	define('EXCEPTION_LOG_URL','http://10.14.14.8:8080/ExceptionHandlingWs/services/ExceptionHandlingSerivceWs/LogException');
 	define('EXCEPTION_RETREVAL_URL','http://10.14.14.8:8080/ExceptionHandlingWs/services/ExceptionHandlingSerivceWs/ReadExceptionLogs');
@@ -473,8 +473,8 @@ define('NEWRELIC_ID','10740886');
         define('SAP_MATERIAL_CHECK_URL', 'http://172.18.1.139:56500/wba/api/MaterialStatus');
 		define('SYSTEM_INTEGRATION_ROOT',dirname(dirname(COATS2_ROOT)));
 		define('FEATURE_UPLOAD_PATH',COATS2_APP.'webroot/files/feature_uploads/');
-		define('ORDER_PO_TYPE','ZCCE');	
-		define('SHARED_BACKEND_FAILED_FOLDER',TMP . 'backend_uploads/failed_files/');
+		define('ORDER_PO_TYPE','ZCCE');
+		define('SHARED_BACKEND_FAILED_FOLDER',COATS2_TMP . 'backend_uploads/failed_files/');
 		define('EXCEPTION_LOG_URL','http://adaziewbaqa01.cloudapp.net/ExceptionHandlingWs/services/ExceptionHandlingSerivceWs/LogException');
 		define('EXCEPTION_RETREVAL_URL','http://adaziewbaqa01.cloudapp.net/ExceptionHandlingWs/services/ExceptionHandlingSerivceWs/ReadExceptionLogs');
 
