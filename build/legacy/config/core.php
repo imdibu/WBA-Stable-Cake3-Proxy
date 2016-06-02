@@ -3,7 +3,7 @@
 /**
  * This is core configuration file.
  *
- * Use it to configure core behavior of Cake.
+ * Use it to CConfigure core behavior of Cake.
  *
  * PHP 5
  *
@@ -32,17 +32,17 @@
  * In production mode, flash messages redirect after a time interval.
  * In development mode, you need to click the flash message to continue.
  */
-/*Configure::write('env', 'prod');
+/*CConfigure::write('env', 'prod');
 
-switch(Configure::read('env')){
+switch(CConfigure::read('env')){
     case 'dev':
-        Configure::write('debug', 0);
+        CConfigure::write('debug', 0);
         break;
     case 'qa':
-        Configure::write('debug',0);
+        CConfigure::write('debug',0);
         break;
     default :
-        Configure::write('debug', 0);
+        CConfigure::write('debug', 0);
         break;
 }*/
 
@@ -50,32 +50,32 @@ $environment_instance_variable = 'qa';
 
 //pr($environment_instance_variable); //exit();
 
-Configure::write('env',$environment_instance_variable);
+CConfigure::write('env',$environment_instance_variable);
 
-//Configure::write('env','prod');
+//CConfigure::write('env','prod');
 
 
-switch(Configure::read('env')){
+switch(CConfigure::read('env')){
     case 'dev':
-        Configure::write('debug', 2);
+        CConfigure::write('debug', 2);
         break;
     case 'qa':
-        Configure::write('debug',2);
+        CConfigure::write('debug', 0);
         break;
 	case 'HK':
-        Configure::write('debug',2);
+        CConfigure::write('debug',2);
         break;
 	case 'AX':
-        Configure::write('debug',2);
+        CConfigure::write('debug',2);
         break;
     default :
-        Configure::write('debug', 2);
+        CConfigure::write('debug', 2);
         break;
 }
 
 
 /**
- * Configure the Error handler used to handle errors for your application.  By default
+ * CConfigure the Error handler used to handle errors for your application.  By default
  * ErrorHandler::handleError() is used.  It will display errors using Debugger, when debug > 0
  * and log errors with CakeLog when debug = 0.
  *
@@ -89,15 +89,15 @@ switch(Configure::read('env')){
  *
  * @see ErrorHandler for more information on error handling and configuration.
  */
-Configure::write('Error', array(
+CConfigure::write('Error', array(
     'handler' => 'ErrorHandler::handleError',
     //'level' => E_ALL & ~E_DEPRECATED,
-    'level' => E_ALL ^ E_NOTICE ^ E_WARNING,
+    'level' => E_ALL ^ E_NOTICE ^ E_WARNING ^ E_STRICT,
     'trace' => true
 ));
 
 /**
- * Configure the Exception handler used for uncaught exceptions.  By default,
+ * CConfigure the Exception handler used for uncaught exceptions.  By default,
  * ErrorHandler::handleException() is used. It will display a HTML page for the exception, and
  * while debug > 0, framework errors like Missing Controller will be displayed.  When debug = 0,
  * framework errors will be coerced into generic HTTP errors.
@@ -113,7 +113,7 @@ Configure::write('Error', array(
  *
  * @see ErrorHandler for more information on exception handling and configuration.
  */
-Configure::write('Exception', array(
+CConfigure::write('Exception', array(
     'handler' => 'ErrorHandler::handleException',
     'renderer' => 'ExceptionRenderer',
     'log' => true
@@ -122,10 +122,10 @@ Configure::write('Exception', array(
 /**
  * Application wide charset encoding
  */
-Configure::write('App.encoding', 'UTF-8');
+CConfigure::write('App.encoding', 'UTF-8');
 
 /**
- * To configure CakePHP *not* to use mod_rewrite and to
+ * To CConfigure CakePHP *not* to use mod_rewrite and to
  * use CakePHP pretty URLs, remove these .htaccess
  * files:
  *
@@ -135,7 +135,7 @@ Configure::write('App.encoding', 'UTF-8');
  *
  * And uncomment the App.baseUrl below:
  */
-//Configure::write('App.baseUrl', env('SCRIPT_NAME'));
+//CConfigure::write('App.baseUrl', env('SCRIPT_NAME'));
 
 /**
  * Uncomment the define below to use CakePHP prefix routes.
@@ -153,13 +153,13 @@ Configure::write('App.encoding', 'UTF-8');
  * 	`manager_index()` and `/manager/controller/index`
  *
  */
-//Configure::write('Routing.prefixes', array('admin'));
+//CConfigure::write('Routing.prefixes', array('admin'));
 
 /**
  * Turn off all caching application-wide.
  *
  */
-//Configure::write('Cache.disable', true);
+//CConfigure::write('Cache.disable', true);
 
 /**
  * Enable cache checking.
@@ -170,7 +170,7 @@ Configure::write('App.encoding', 'UTF-8');
  * or in each action using $this->cacheAction = true.
  *
  */
-//Configure::write('Cache.check', true);
+//CConfigure::write('Cache.check', true);
 
 /**
  * Enable cache view prefixes.
@@ -180,7 +180,7 @@ Configure::write('App.encoding', 'UTF-8');
  * for instance. Each version can then have its own view cache namespace.
  * Note: The final cache file name will then be `prefix_cachefilename`.
  */
-//Configure::write('Cache.viewPrefix', 'prefix');
+//CConfigure::write('Cache.viewPrefix', 'prefix');
 
 /**
  * Defines the default error type when using the log() function. Used for
@@ -191,7 +191,7 @@ define('LOG_ERROR', LOG_ERR);
 /**
  * A random string used as a Cookie name
  */
-Configure::write('Cookie.salt', 'a8a4997894c7275e82fe5609c03cad0dd301a434');
+CConfigure::write('Cookie.salt', 'a8a4997894c7275e82fe5609c03cad0dd301a434');
 
 /**
  * Session configuration.
@@ -230,32 +230,42 @@ Configure::write('Cookie.salt', 'a8a4997894c7275e82fe5609c03cad0dd301a434');
  * the cake shell command: cake schema create Sessions
  *
  *
- * 	Configure::write('Session', array(
+ * 	CConfigure::write('Session', array(
  * 		'defaults' => 'php'
  * 	));
  */
 
-Configure::write('Session', array(
-    'cookie' => Configure::read('Cookie.salt'),
-    'defaults' => 'database',
-    'checkAgent' => true,
+//CConfigure::write('Session', array(
+//    'cookie' => CConfigure::read('Cookie.salt'),
+//    'defaults' => 'database',
+//    'checkAgent' => true,
+//    'timeout' => 60,
+//    'cookieTimeout' => 12 * 60,
+//    'handler' => array(
+//        'model' => 'Session',
+//    )
+//));
+
+CConfigure::write('Session', array(
+    'cookie' => CConfigure::read('Cookie.salt'),
+    'defaults' => 'cache',
+    'checkAgent' => false,
     'timeout' => 60,
     'cookieTimeout' => 12 * 60,
     'handler' => array(
-        'model' => 'Session',
+        'config' => 'session',
     )
 ));
-
 
 /**
  * A random string used in security hashing methods.
  */
-Configure::write('Security.salt', '5e6b7d7c6a50bd9b6255555d5c17735152b6d7b4');
+CConfigure::write('Security.salt', '5e6b7d7c6a50bd9b6255555d5c17735152b6d7b4');
 
 /**
  * A random numeric string (digits only) used to encrypt/decrypt strings.
  */
-Configure::write('Security.cipherSeed', '54249674968364576859309657453');
+CConfigure::write('Security.cipherSeed', '54249674968364576859309657453');
 
 /**
  * Apply timestamps with the last modified time to static assets (js, css, images).
@@ -265,7 +275,7 @@ Configure::write('Security.cipherSeed', '54249674968364576859309657453');
  * Set to `true` to apply timestamps when debug > 0. Set to 'force' to always enable
  * timestamping regardless of debug value.
  */
-//Configure::write('Asset.timestamp', true);
+//CConfigure::write('Asset.timestamp', true);
 
 /**
  * Compress CSS output by removing comments, whitespace, repeating tags, etc.
@@ -274,7 +284,7 @@ Configure::write('Security.cipherSeed', '54249674968364576859309657453');
  *
  * To use, prefix the CSS link URL with '/ccss/' instead of '/css/' or use HtmlHelper::css().
  */
-//Configure::write('Asset.filter.css', 'css.php');
+//CConfigure::write('Asset.filter.css', 'css.php');
 
 /**
  * Plug in your own custom JavaScript compressor by dropping a script in your webroot to handle the
@@ -282,14 +292,14 @@ Configure::write('Security.cipherSeed', '54249674968364576859309657453');
  *
  * To use, prefix your JavaScript link URLs with '/cjs/' instead of '/js/' or use JavaScriptHelper::link().
  */
-//Configure::write('Asset.filter.js', 'custom_javascript_output_filter.php');
+//CConfigure::write('Asset.filter.js', 'custom_javascript_output_filter.php');
 
 /**
  * The classname and database used in CakePHP's
  * access control lists.
  */
-Configure::write('Acl.classname', 'DbAcl');
-Configure::write('Acl.database', 'default');
+CConfigure::write('Acl.classname', 'DbAcl');
+CConfigure::write('Acl.database', 'default');
 
 /**
  * Uncomment this line and correct your server timezone to fix
@@ -298,20 +308,20 @@ Configure::write('Acl.database', 'default');
 date_default_timezone_set('UTC');
 
 /**
- * Configure the cache handlers that CakePHP will use for internal
+ * CConfigure the cache handlers that CakePHP will use for internal
  * metadata like class maps, and model schema.
  *
  * By default File is used, but for improved performance you should use APC.
  *
- * Note: 'default' and other application caches should be configured in app/Config/bootstrap.php.
+ * Note: 'default' and other application caches should be CConfigured in app/Config/bootstrap.php.
  *       Please check the comments in boostrap.php for more info on the cache engines available
  *       and their setttings.
  */
-$engine = 'File';
+$engine = 'Redis';
 
 // In development mode, caches should expire quickly.
 $duration = '+999 days';
-if (Configure::read('debug') >= 1) {
+if (CConfigure::read('debug') >= 1) {
     $duration = '+10 seconds';
 }
 
@@ -319,25 +329,34 @@ if (Configure::read('debug') >= 1) {
 $prefix = 'myapp_';
 
 /**
- * Configure the cache used for general framework caching.  Path information,
+ * CConfigure the cache used for general framework caching.  Path information,
  * object listings, and translation cache files are stored with this configuration.
  */
 Cache::config('_cake_core_', array(
     'engine' => $engine,
     'prefix' => $prefix . 'cake_core_',
-    'path' => CACHE . 'persistent' . DS,
+    'path' => COATS2_CACHE . 'persistent' . DS,
     'serialize' => ($engine === 'File'),
     'duration' => $duration
 ));
 
 /**
- * Configure the cache for model and datasource caches.  This cache configuration
+ * CConfigure the cache for model and datasource caches.  This cache configuration
  * is used to store schema descriptions, and table listings in connections.
  */
 Cache::config('_cake_model_', array(
     'engine' => $engine,
     'prefix' => $prefix . 'cake_model_',
-    'path' => CACHE . 'models' . DS,
+    'path' => COATS2_CACHE . 'models' . DS,
     'serialize' => ($engine === 'File'),
     'duration' => $duration
+));
+
+/**
+ * Save session through cache handler
+ */
+Cache::config ('session', array (
+    'engine' => $engine,
+    'prefix' => $prefix . 'cake_session_',
+    'duration' => 12 * 3600
 ));

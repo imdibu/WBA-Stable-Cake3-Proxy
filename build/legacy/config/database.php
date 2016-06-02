@@ -77,17 +77,28 @@ class DATABASE_CONFIG {
 		'prefix' => 'coats_',	
 	);*/
 
- public $default = array(
+     public $default = array(
         'datasource' => 'Database/Sqlserver',
         'persistent' => false,
-        'host' => '10.4.255.7,10101',
-        'login' => 'Wcsqa',
-        'password' => 'P@$$w0rd',
+        'host' => 'Server=PETRICA;database=coats_wba_p4i_hk',
+        'login' => 'sa',
+        'password' => 'root123',
         //'database' => 'coats_wba_p4i_hk',
-        'database' =>'coats_dev_p4i',
-        'prefix' => 'coats_',
+        'database' =>'coats_wba_p4i_hk',
+        'prefix' => 'coats_'
             //'encoding'  => PDO::SQLSRV_ENCODING_UTF8
     );
+
+//   public $default = array(
+//       'datasource' => 'Database/Sqlserver',
+//       'persistent' => false,
+//       'host' => 'Server=10.4.255.7,10101;database=coats_qa_p4i',
+//       'login' => 'wcsqa',
+//       'password' => 'P@$$w0rd',
+//       'database' => 'coats_qa_p4i',
+//      //'database' => 'coats_test_p4i',
+//       'prefix' => 'coats_',
+//   );
     
     
    /* public $default = array(
@@ -113,16 +124,16 @@ class DATABASE_CONFIG {
         'prefix' => 'coats_',
             //'encoding'  => PDO::SQLSRV_ENCODING_UTF8
     );*/
-    public $sandb = array(
-        'datasource' => 'Database/Sqlserver',
-        'persistent' => false,
-        'host' => 'INMDLW7SANTHANA',
-        'login' => '',
-        'password' => '',
-        'database' => 'coats_wba_p4i',
-        'prefix' => 'coats_',
-        'encoding' => PDO::SQLSRV_ENCODING_UTF8
-    );
+//    public $sandb = array(
+//        'datasource' => 'Database/Sqlserver',
+//        'persistent' => false,
+//        'host' => 'PETRICA',
+//        'login' => 'sa',
+//        'password' => 'root123',
+//        'database' => 'coats_wba_p4i_hk',
+//        'prefix' => 'coats_',
+//        'encoding' => PDO::SQLSRV_ENCODING_UTF8
+//    );
     public $default_ = array(
         'datasource' => 'ArraySource'
     );

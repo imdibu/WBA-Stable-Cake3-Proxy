@@ -120,6 +120,38 @@ DocumentRoot "C:/www"
 </Directory>
 ```
 
+### 1.3 Redis 3.0
+
+__Download Redis 3.0__
+
+[https://github.com/MSOpenTech/redis/releases/tag/win-3.0.501](https://github.com/MSOpenTech/redis/releases/tag/win-3.0.501)
+
+Download [.msi](https://github.com/MSOpenTech/redis/releases/download/win-3.0.501/Redis-x64-3.0.501.msi) version and install it under
+
+```
+C:\Redis
+```
+
+Specify max memory as 512M.
+
+This will install redis as a service.
+
+__Download PHP 5.5 Redis Extensions Thread Safe__
+
+[https://pecl.php.net/package/redis/2.2.7/windows](https://pecl.php.net/package/redis/2.2.7/windows)
+
+Download the [Thread Safe](http://windows.php.net/downloads/pecl/releases/redis/2.2.7/php_redis-2.2.7-5.5-ts-vc11-x86.zip) archive and extract the content.
+
+Copy ```php_redis.dll``` to C:\php55\ext and enable extension in ```php.ini```
+
+```
+extension=php_redis.dll
+```
+
+
+
+
+
 
 
 

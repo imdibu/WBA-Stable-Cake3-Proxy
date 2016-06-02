@@ -154,7 +154,7 @@ Cache::config('default', array('engine' => 'File'));
  *
  * Feel free to remove or add filters as you see fit for your application. A few examples:
  *
- * Configure::write('Dispatcher.filters', array(
+ * CConfigure::write('Dispatcher.filters', array(
  * 		'MyCacheFilter', //  will use MyCacheFilter class from the Routing/Filter package in your app.
  * 		'MyPlugin.MyFilter', // will use MyFilter class from the Routing/Filter package in MyPlugin plugin.
  * 		array('callable' => $aFunction, 'on' => 'before', 'priority' => 9), // A valid PHP callback type to be called on beforeDispatch
@@ -162,15 +162,15 @@ Cache::config('default', array('engine' => 'File'));
  *
  * ));
  */
-Configure::write('Dispatcher.filters', array(
+CConfigure::write('Dispatcher.filters', array(
     'AssetDispatcher',
     'CacheDispatcher'
 ));
 
 /**
- * Configures default file logging options
+ * CConfigures default file logging options
  */
-App::uses('CakeLog', 'Log');
+CApp::uses('CakeLog', 'Log');
 CakeLog::config('debug', array(
     'engine' => 'FileLog',
     'types' => array('notice', 'info', 'debug'),
@@ -208,7 +208,7 @@ CakeLog::config('manualorder_log', array(
 
 //defining constants
 
-switch (Configure::read('env')) {
+switch (CConfigure::read('env')) {
 
 	case 'AX':
         define('SAMPLE_ORDER_NO_START', 10000000);
@@ -231,14 +231,14 @@ switch (Configure::read('env')) {
         define('CC_REPORT_PURCHASE_SUMMARY_URL', 'http://172.18.2.149:57500/wba/api/PurchasesReport');
         define('CC_REPORT_OUTSTANDING_PAYMENT_URL', 'http://172.18.2.149:57500/wba/api/OutstandingPaymentsReport');
         define('DOMAIN_URL','wcs.coatscolorexpress.com');
-        Configure::write('GisIps', array(
+        CConfigure::write('GisIps', array(
             '192.168.0.79',
             '192.168.0.93',
             '192.168.0.111',
         ));
         define('SAP_ORDER_SCOPE_URL', 'http://172.18.1.129:55500/wba/api/OrderUpdateScope');
         define('SAP_ORDER_DATA_URL', 'http://172.18.2.149:57500/wba/api/OrderUpdateInfo');
-        Configure::write('SapClientGMT', array(
+        CConfigure::write('SapClientGMT', array(
             // date('H') => SAP Instance
 			'5'=>array('SAP700'),
             '6'=>array('SAP701'),
@@ -251,7 +251,7 @@ switch (Configure::read('env')) {
         ));
         define('SAP_IMM_ORDER_DATA_URL', 'http://172.18.2.149:57500/wba/api/OrderUpdateScope?response=immediate');
         define('SAP_MATERIAL_CHECK_URL', 'http://172.18.2.149:57500/wba/api/MaterialStatus');
-		define('SYSTEM_INTEGRATION_ROOT',dirname(dirname(ROOT)));
+		define('SYSTEM_INTEGRATION_ROOT',dirname(dirname(COATS2_ROOT)));
 		define('SHARED_BACKEND_FAILED_FOLDER',TMP . 'backend_uploads/failed_files/');
 		define('SHARED_SFTP_FAILED_FOLDER',SYSTEM_INTEGRATION_ROOT.'ftproot/Coats/customer_sftp/failed_files');
 		define('FEATURE_UPLOAD_PATH',APP.'webroot/files/feature_uploads/');
@@ -284,14 +284,14 @@ switch (Configure::read('env')) {
         define('CC_REPORT_PURCHASE_SUMMARY_URL', 'http://172.18.2.149:57500/WebServicePortal/execute?service=CCPurchasesReportHK');
         define('CC_REPORT_OUTSTANDING_PAYMENT_URL', 'http://172.18.2.149:57500/wba/api/OutstandingPaymentsReport');
         define('DOMAIN_URL','wcs.coatscolorexpress.com');
-        Configure::write('GisIps', array(
+        CConfigure::write('GisIps', array(
             '192.168.0.79',
             '192.168.0.93',
             '192.168.0.111',
         ));
         define('SAP_ORDER_SCOPE_URL', 'http://172.18.1.129:55500/wba/api/OrderUpdateScope');
         define('SAP_ORDER_DATA_URL', 'http://172.18.2.149:57500/WebServicePortal/execute?service=OrderUpdateInfoHK');
-        Configure::write('SapClientGMT', array(
+        CConfigure::write('SapClientGMT', array(
             // date('H') => SAP Instance
 			'5'=>array('SAP700'),
             '6'=>array('SAP701'),
@@ -304,7 +304,7 @@ switch (Configure::read('env')) {
         ));
         define('SAP_IMM_ORDER_DATA_URL', 'http://172.18.2.149:57500/WebServicePortal/execute?service=OrderUpdateScopeHK&response=immediate');
         define('SAP_MATERIAL_CHECK_URL', 'http://172.18.2.149:57500/wba/api/MaterialStatus');
-		define('SYSTEM_INTEGRATION_ROOT',dirname(dirname(ROOT)));
+		define('SYSTEM_INTEGRATION_ROOT',dirname(dirname(COATS2_ROOT)));
 		define('SHARED_BACKEND_FAILED_FOLDER',TMP . 'backend_uploads/failed_files/');
 		define('SHARED_SFTP_FAILED_FOLDER',SYSTEM_INTEGRATION_ROOT.'ftproot/Coats/customer_sftp/failed_files');
 		define('FEATURE_UPLOAD_PATH',APP.'webroot/files/feature_uploads/');
@@ -337,7 +337,7 @@ switch (Configure::read('env')) {
         define('CC_REPORT_PURCHASE_SUMMARY_URL', 'http://172.18.2.149:57500/wba/api/PurchasesReport');
         define('CC_REPORT_OUTSTANDING_PAYMENT_URL', 'http://172.18.2.149:57500/wba/api/OutstandingPaymentsReport');
         define('DOMAIN_URL','wcs.coatscolorexpress.com');
-        Configure::write('GisIps', array(
+        CConfigure::write('GisIps', array(
             '192.168.0.79',
             '192.168.0.93',
             '192.168.0.111',
@@ -345,7 +345,7 @@ switch (Configure::read('env')) {
 		define('SAP_ORDER_SCOPE_URL', 'http://172.18.1.129:55500/wba/api/OrderUpdateScope');
 		
         define('SAP_ORDER_DATA_URL', 'http://172.18.2.149:57500/wba/api/OrderUpdateInfo');
-        Configure::write('SapClientGMT', array(
+        CConfigure::write('SapClientGMT', array(
             // date('H') => SAP Instance
 			'5'=>array('SAP700'),
             '6'=>array('SAP701'),
@@ -358,7 +358,7 @@ switch (Configure::read('env')) {
         ));
         define('SAP_IMM_ORDER_DATA_URL', 'http://172.18.2.149:57500/wba/api/OrderUpdateScope?response=immediate');
         define('SAP_MATERIAL_CHECK_URL', 'http://172.18.2.149:57500/wba/api/MaterialStatus');
-		define('SYSTEM_INTEGRATION_ROOT',dirname(dirname(ROOT)));
+		define('SYSTEM_INTEGRATION_ROOT',dirname(dirname(COATS2_ROOT)));
 		define('SHARED_BACKEND_FAILED_FOLDER',TMP . 'backend_uploads/failed_files/');
 		define('SHARED_SFTP_FAILED_FOLDER',SYSTEM_INTEGRATION_ROOT.'ftproot/Coats/customer_sftp/failed_files');
 		define('FEATURE_UPLOAD_PATH',APP.'webroot/files/feature_uploads/');
@@ -392,28 +392,28 @@ switch (Configure::read('env')) {
         define('CC_REPORT_PURCHASE_SUMMARY_URL', 'http://172.18.1.139:56500/wba/api/PurchasesReport');
         define('CC_REPORT_OUTSTANDING_PAYMENT_URL', 'http://172.18.1.139:56500/wba/api/OutstandingPaymentsReport');
         define('DOMAIN_URL','qawcs.coatscolourexpress.com');
-        Configure::write('GisIps', array(
+        CConfigure::write('GisIps', array(
             '192.168.0.79',
             '192.168.0.93',
             '192.168.0.111',
         ));       		
 		define('SAP_ORDER_SCOPE_URL', 'http://172.18.1.129:55500/wba/api/OrderUpdateScope');		
         define('SAP_ORDER_DATA_URL', 'http://172.18.1.139:56500/wba/api/OrderUpdateInfo');
-        Configure::write('SapClientGMT', array(
+        CConfigure::write('SapClientGMT', array(
             // date('H') => SAP Instance
             '2'=>array('SAP700'),
             '7'=>array('SAP701'),
             '18'=>array('SAP702','SAP703')
         ));
         define('SAP_IMM_ORDER_DATA_URL', 'http://172.18.1.139:56500/wba/api/OrderUpdateScope?response=immediate');
-		define('SYSTEM_INTEGRATION_ROOT',dirname(dirname(ROOT)));
-		define('FEATURE_UPLOAD_PATH',APP.'webroot/files/feature_uploads/');	
+		define('SYSTEM_INTEGRATION_ROOT',dirname(dirname(COATS2_ROOT)));
+		define('FEATURE_UPLOAD_PATH',COATS2_APP.'webroot/files/feature_uploads/');
 		define('ORDER_PO_TYPE','ZCCE');	
 		define('INSTANCE_TYPE','qa');
 		define('EXCEPTION_LOG_URL','http://adaziewbaqa01.cloudapp.net/ExceptionHandlingWs/services/ExceptionHandlingSerivceWs/LogException');
 		define('EXCEPTION_RETREVAL_URL','http://adaziewbaqa01.cloudapp.net/ExceptionHandlingWs/services/ExceptionHandlingSerivceWs/ReadExceptionLogs');	
 		define('CRYSTAL_MARTIN', 43984);	
-define('SHARED_BACKEND_FAILED_FOLDER',TMP . 'backend_uploads/failed_files/');
+define('SHARED_BACKEND_FAILED_FOLDER',COATS2_TMP . 'backend_uploads/failed_files/');
 
 //Changes for Old SFTP server		
 define('SHARED_SFTP_FAILED_FOLDER',SYSTEM_INTEGRATION_ROOT.'ftproot/Coats/customer_sftp/failed_files');
@@ -455,7 +455,7 @@ define('NEWRELIC_ID','10740886');
         define('CC_REPORT_PURCHASE_SUMMARY_URL', 'http://172.18.1.139:56500/wba/api/PurchasesReport');
         define('CC_REPORT_OUTSTANDING_PAYMENT_URL', 'http://172.18.1.139:56500/wba/api/OutstandingPaymentsReport');
         define('DOMAIN_URL','qawcs.coatscolourexpress.com');
-        Configure::write('GisIps', array(
+        CConfigure::write('GisIps', array(
             '192.168.0.79',
             '192.168.0.93',
             '192.168.0.111',
@@ -463,7 +463,7 @@ define('NEWRELIC_ID','10740886');
         
         define('SAP_ORDER_SCOPE_URL', 'http://172.18.1.129:55500/wba/api/OrderUpdateScope');
 		define('SAP_ORDER_DATA_URL', 'http://172.18.1.139:56500/wba/api/OrderUpdateInfo');
-        Configure::write('SapClientGMT', array(
+        CConfigure::write('SapClientGMT', array(
             // date('H') => SAP Instance
             '2'=>array('SAP700'),
             '7'=>array('SAP701'),
@@ -471,8 +471,8 @@ define('NEWRELIC_ID','10740886');
         ));
         define('SAP_IMM_ORDER_DATA_URL', 'http://172.18.1.139:56500/wba/api/OrderUpdateScope?response=immediate');
         define('SAP_MATERIAL_CHECK_URL', 'http://172.18.1.139:56500/wba/api/MaterialStatus');
-		define('SYSTEM_INTEGRATION_ROOT',dirname(dirname(ROOT)));
-		define('FEATURE_UPLOAD_PATH',APP.'webroot/files/feature_uploads/');	
+		define('SYSTEM_INTEGRATION_ROOT',dirname(dirname(COATS2_ROOT)));
+		define('FEATURE_UPLOAD_PATH',COATS2_APP.'webroot/files/feature_uploads/');
 		define('ORDER_PO_TYPE','ZCCE');	
 		define('SHARED_BACKEND_FAILED_FOLDER',TMP . 'backend_uploads/failed_files/');
 		define('EXCEPTION_LOG_URL','http://adaziewbaqa01.cloudapp.net/ExceptionHandlingWs/services/ExceptionHandlingSerivceWs/LogException');
@@ -496,7 +496,7 @@ define('HJ_SV','5');
         break;
 }
 
-Configure::write('SanitizeChars', array(
+CConfigure::write('SanitizeChars', array(
     '<',
     '>',
     '='
@@ -531,14 +531,14 @@ define('COOKIE_NAME','User');
 
 
 // SMS Keywords, that should prefixed with any SMS received in WBA to process; Case in-sensitive
-//Configure::write('sms_keywords' ,array('Coats', 'WCS'));
+//CConfigure::write('sms_keywords' ,array('Coats', 'WCS'));
 
 
 
 // ************ //
 // Inward SMS   //
 // ************ //
-Configure::write('sms_inward_api',array(
+CConfigure::write('sms_inward_api',array(
 	'default'=>array(
 		'keyword_sender'=>'send',
 		'keyword_destination'=>'dest',
@@ -577,7 +577,7 @@ define('SMS_KEYWORD_FEEDBACK_REJECTED','0');
 // ************ //
 // Outward SMS  //
 // ************ //
-Configure::write('sms_outward_api',array(
+CConfigure::write('sms_outward_api',array(
 	'default'=>array(
 		'url'=>'http://203.122.58.168/prepaidgetbroadcast/PrepaidGetBroadcast?userid=coatsplc&pwd=coatsplc123&msgtype=s&ctype=1&sender=CoatsWCS&alert=0',
 		'keyword_destination'=>'pno',
