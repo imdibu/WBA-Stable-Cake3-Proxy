@@ -16,6 +16,5 @@ class SessionTable extends CoatsTable
 
         $this->table('coats_sessions');
         $this->displayField('id');
-        $this->primaryKey('id');
     }
 }

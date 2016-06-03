@@ -1,7 +1,7 @@
 <?php
-namespace App\Model\Entity\Base;
+namespace App\Model\Entity;
 
-use Cake\ORM\Entity;
+
 
 /**
  * SampleOrderLine Entity.
