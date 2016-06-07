@@ -87,9 +87,11 @@ abstract class BaseModelProxy3
     protected function combine($fields, $values)
     {
         $result = array_combine($fields, $values);
-        $result = array_walk($result, function (&$item) {
-            $item = is_bool($item) ? (int) $item : $item;
-        });
+        foreach ($result as &$item) {
+            if (is_bool($item)) {
+                $item = (int) $item;
+            }
+        }
 
         return $result;
     }
