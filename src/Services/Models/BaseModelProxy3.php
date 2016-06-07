@@ -8,7 +8,6 @@
 
 namespace App\Services\Models;
 
-
 use Cake\Datasource\Exception\MissingModelException;
 use Cake\ORM\TableRegistry;
 
@@ -16,13 +15,15 @@ abstract class BaseModelProxy3
 {
     const CLASS_SUFFIX = 'Proxy3';
 
-    protected $foreign_key_alias;  
     protected $model;
     protected $modelTable;
-    protected $data;
-    protected $multiple;
-    protected $errors = [];
 
+    /**
+     * check if the table has been created
+     *
+     * BaseModelProxy3 constructor.
+     * @throws MissingModelException if the table model does not exist
+     */
     public function __construct()
     {
         if (!static::tableExists(TableRegistry::get($this->model)->table())) {
@@ -32,42 +33,59 @@ abstract class BaseModelProxy3
         $this->modelTable = TableRegistry::get($this->model);
     }
 
+    /**
+     * get the clas
+     *
+     * @param bool $stubOnly
+     * @return mixed
+     */
     public static function className($stubOnly = false)
     {
         return $stubOnly ? end(explode("\\", get_called_class())) : get_called_class();
     }
 
+    /**
+     * return the fully qualified namespace
+     *
+     * @param $className
+     * @return mixed
+     */
     public static function getClassNs($className)
     {
         return str_replace(static::className(true), $className, static::className());
     }
 
+    /**
+     * check if the proxy class exists
+     *
+     * @param $className
+     * @return mixed
+     */
     public static function classExists($className)
     {
         return class_exists(static::getClassNs($className) . static::CLASS_SUFFIX);
     }
 
+    /**
+     * check if the cake 3 table is mapped on a database table
+     *
+     * @param $tableName
+     * @return bool
+     */
     public static function tableExists($tableName)
     {
         return strpos($tableName, 'coats_') === 0;
     }
 
-    public function insertData($data)
-    {
-        $model = $this->modelTable->newEntity();
-        $this->assign($model, $data);
-        $errors = [];
-        if (!$this->modelTable->save($model)) {
-            $errors = array_merge($errors, $model->errors());
-        }
-        if (empty($errors)) {
-            return $model->id;
-        }
-
-        $this->errors = $errors;
-        return false;
-    }
-
+    /**
+     * create a new entity, populate the fields and attempt record insert
+     * if the save is successful set the cake 2 model id for further usage
+     *
+     * @param $model - cake 2 model
+     * @param $fields - field names
+     * @param $values - field values
+     * @return bool
+     */
     public function create($model, $fields, $values)
     {
         $entity = $this->modelTable->newEntity(array_combine($fields, $values));
@@ -79,6 +97,16 @@ abstract class BaseModelProxy3
         return true;
     }
 
+    /**
+     * attempt the update of an existing record
+     * lose the primary key
+     * assign each field in the entity with it's value
+     *
+     * @param $model - cake 2 model
+     * @param $fields - field names
+     * @param $values - field values
+     * @return bool
+     */
     public function update($model, $fields, $values)
     {
         $data = array_combine($fields, $values);
@@ -95,44 +123,12 @@ abstract class BaseModelProxy3
         return (bool) $this->modelTable->save($entity);
     }
 
-    public function save(array $data = [], $options = [])
-    {
-        if (($model_id = $this->insertData($data[$this->model])) !== false) {
-            unset($data[$this->model]);
-            $this->saveRelations($model_id, $data);
-        }
-    }
-
-    public function saveRelation($modelAlias, $foreign_key_id, $data, $options)
-    {
-        $isSingleInsert = array_reduce(array_keys($data), function ($carry, $item) {
-            return $carry && !is_numeric($item);
-        }, true);
-
-        if (($model = static::loadModel($modelAlias)) !== false) {
-            if ($isSingleInsert) {
-                $data[$this->foreign_key_alias] = $foreign_key_id;
-                $model->save([$modelAlias => $data]);
-            } else {
-                foreach ($data as $key => $d) {
-                    $d[$this->foreign_key_alias] = $foreign_key_id;
-                    $model->save([$modelAlias => $d]);
-                }
-            }
-        }
-    }
-
-    public function saveRelations($foreign_key_id, $data, $options = [])
-    {
-        if (empty($this->foreign_key_alias)) {
-            return;
-        }
-
-        foreach ($data as $modelAlias => &$d) {
-            $this->saveRelation($modelAlias, $foreign_key_id, $d, $options);
-        }
-    }
-
+    /**
+     * return an instance of a proxy model
+     *
+     * @param $className
+     * @return bool
+     */
     public static function loadModel($className)
     {
         if (static::classExists($className)) {
@@ -142,15 +138,16 @@ abstract class BaseModelProxy3
         return false;
     }
 
+    /**
+     * assign values to the entity's members
+     *
+     * @param $entity
+     * @param array $data
+     */
     protected function assign(&$entity, $data = [])
     {
         foreach ($data as $property => $value) {
             $entity->{$property} = $value;
         }
-    }
-
-    protected function dataIsWrapped($data)
-    {
-        return array_key_exists($this->model, $data) && !empty($data[$this->model]);
     }
 }
