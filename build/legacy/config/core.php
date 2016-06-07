@@ -60,7 +60,7 @@ switch(CConfigure::read('env')){
         CConfigure::write('debug', 2);
         break;
     case 'qa':
-        CConfigure::write('debug', 0);
+        CConfigure::write('debug',2);
         break;
 	case 'HK':
         CConfigure::write('debug',2);
@@ -83,7 +83,7 @@ switch(CConfigure::read('env')){
  *
  * - `handler` - callback - The callback to handle errors. You can set this to any callable type,
  *   including anonymous functions.
- *   Make sure you add App::uses('MyHandler', 'Error'); when using a custom handler class
+ *   Make sure you add CApp::uses('MyHandler', 'Error'); when using a custom handler class
  * - `level` - int - The level of errors you are interested in capturing.
  * - `trace` - boolean - Include stack traces for errors in log files.
  *
@@ -106,7 +106,7 @@ CConfigure::write('Error', array(
  *
  * - `handler` - callback - The callback to handle exceptions. You can set this to any callback type,
  *   including anonymous functions.
- *   Make sure you add App::uses('MyHandler', 'Error'); when using a custom handler class
+ *   Make sure you add CApp::uses('MyHandler', 'Error'); when using a custom handler class
  * - `renderer` - string - The class responsible for rendering uncaught exceptions.  If you choose a custom class you
  *   should place the file for that class in app/Lib/Error. This class needs to implement a render method.
  * - `log` - boolean - Should Exceptions be logged?
@@ -122,7 +122,7 @@ CConfigure::write('Exception', array(
 /**
  * Application wide charset encoding
  */
-CConfigure::write('App.encoding', 'UTF-8');
+CConfigure::write('CApp.encoding', 'UTF-8');
 
 /**
  * To CConfigure CakePHP *not* to use mod_rewrite and to
@@ -133,9 +133,9 @@ CConfigure::write('App.encoding', 'UTF-8');
  * /app/.htaccess
  * /app/webroot/.htaccess
  *
- * And uncomment the App.baseUrl below:
+ * And uncomment the CApp.baseUrl below:
  */
-//CConfigure::write('App.baseUrl', env('SCRIPT_NAME'));
+//CConfigure::write('CApp.baseUrl', env('SCRIPT_NAME'));
 
 /**
  * Uncomment the define below to use CakePHP prefix routes.
