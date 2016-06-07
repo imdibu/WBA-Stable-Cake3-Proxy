@@ -78,6 +78,23 @@ abstract class BaseModelProxy3
     }
 
     /**
+     * replace boolean values with 1 or 0 to prevent inserting nulls on non null columns
+     *
+     * @param $fields
+     * @param $values
+     * @return mixed
+     */
+    protected function combine($fields, $values)
+    {
+        $result = array_combine($fields, $values);
+        $result = array_walk($result, function (&$item) {
+            $item = is_bool($item) ? (int) $item : $item;
+        });
+
+        return $result;
+    }
+
+    /**
      * create a new entity, populate the fields and attempt record insert
      * if the save is successful set the cake 2 model id for further usage
      *
@@ -88,7 +105,7 @@ abstract class BaseModelProxy3
      */
     public function create($model, $fields, $values)
     {
-        $entity = $this->modelTable->newEntity(array_combine($fields, $values));
+        $entity = $this->modelTable->newEntity($this->combine($fields, $values));
         if (!$this->modelTable->save($entity)) {
             return false;
         }
@@ -109,7 +126,7 @@ abstract class BaseModelProxy3
      */
     public function update($model, $fields, $values)
     {
-        $data = array_combine($fields, $values);
+        $data = $this->combine($fields, $values);
         if (isset($data[$model->primaryKey])) {
             unset($data[$model->primaryKey]);
         }
