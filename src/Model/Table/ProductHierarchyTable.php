@@ -1,7 +1,7 @@
 <?php
 namespace App\Model\Table;
 
-class ProductHierarchieTable extends CoatsTable
+class ProductHierarchyTable extends CoatsTable
 {
 
     /**
