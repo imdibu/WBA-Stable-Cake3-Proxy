@@ -1,7 +1,7 @@
 <?php
 namespace App\Services\Models;
 
-class SapccInvoicesLatestProxy3 extends BaseModelProxy3
+class SapCcinvoicesLatestProxy3 extends BaseModelProxy3
 {
-    public $model = 'SapccInvoicesLatest';
+    public $model = 'SapCcinvoicesLatest';
 }

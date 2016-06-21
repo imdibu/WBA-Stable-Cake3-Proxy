@@ -59,7 +59,7 @@ namespace App\Model\Entity;
  * @property \Cake\I18n\Time $cr_date
  * @property \Cake\I18n\Time $updated_date
  */
-class SapccDeliverynote extends CoatsEntity
+class SapCcdeliverynote extends CoatsEntity
 {
 
     /**

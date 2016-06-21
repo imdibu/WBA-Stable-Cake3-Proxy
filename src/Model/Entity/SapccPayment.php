@@ -16,7 +16,7 @@ namespace App\Model\Entity;
  * @property string $overdue_after_60_days
  * @property string $overdue_after_90_days
  */
-class SapccPayment extends CoatsEntity
+class SapCcpayment extends CoatsEntity
 {
 
     /**
