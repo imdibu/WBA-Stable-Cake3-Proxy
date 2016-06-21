@@ -66,7 +66,7 @@ namespace App\Model\Entity;
  * @property \Cake\I18n\Time $cr_date
  * @property \Cake\I18n\Time $updated_date
  */
-class SapccInvoice extends CoatsEntity
+class SapCcinvoice extends CoatsEntity
 {
 
     /**

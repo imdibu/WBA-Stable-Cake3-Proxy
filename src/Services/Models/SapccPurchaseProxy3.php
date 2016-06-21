@@ -1,7 +1,7 @@
 <?php
 namespace App\Services\Models;
 
-class SapccPurchaseProxy3 extends BaseModelProxy3
+class SapCcpurchaseProxy3 extends BaseModelProxy3
 {
-    public $model = 'SapccPurchase';
+    public $model = 'SapCcpurchase';
 }

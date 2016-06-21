@@ -63,7 +63,7 @@ namespace App\Model\Entity;
  * @property string $customer_material_no
  * @property string $price
  */
-class SapccInvoicesLatest extends CoatsEntity
+class SapCcinvoicesLatest extends CoatsEntity
 {
 
     /**
