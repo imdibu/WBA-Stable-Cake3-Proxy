@@ -1,3 +1,4 @@
 [submodule "legacy"]
 	path = legacy
 	url = git@github.com:Coats/WBA-Stable.git
+	branch = master
