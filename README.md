@@ -86,6 +86,7 @@ Configure application to use the MSSQL Driver and PDO UTF8 encoding
     'default' => [
         'driver' => 'App\Extensions\Database\Driver\Sqlserver',
         'encoding' => PDO::SQLSRV_ENCODING_UTF8,
+        'quoteIdentifiers' => true
     ]
 ]
 ```
@@ -133,4 +134,20 @@ Create JS and CSS folders
 ```bash
 mkdir -p legacy/Project/app/tmp/cache/css
 mkdir -p legacy/Project/app/tmp/cache/js
+```
+
+Create Session directory necessary for uploaded files
+
+```bash
+mkdir -p legacy/Project/app/tmp/sessions
+```
+
+#### 2.3.2 Use custom SQL Model
+
+Configure in config/database.php
+
+```bash
+public $default = array(
+    'datasource' => 'SqlserverExtended'
+)
 ```

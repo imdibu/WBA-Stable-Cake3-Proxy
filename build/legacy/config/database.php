@@ -78,7 +78,7 @@ class DATABASE_CONFIG {
 	);*/
 
      public $default = array(
-        'datasource' => 'Database/Sqlserver',
+        'datasource' => 'SqlserverExtended',
         'persistent' => false,
         'host' => 'Server=PETRICA;database=coats_wba_p4i_hk',
         'login' => 'sa',
