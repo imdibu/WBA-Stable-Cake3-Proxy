@@ -416,7 +416,6 @@ ALTER TRIGGER [dbo].[InsteadOfInsertOn_coats_bulk_order_lines]
 
 
 /****** UPDATE UPDATE TRIGGER *****************/
-USE [coats_wba_p4i_hk]
 GO
 /****** Object:  Trigger [dbo].[InsteadOfUpdateOn_coats_bulk_order_lines]    Script Date: 22.06.2016 22:32:22 ******/
 SET ANSI_NULLS ON
