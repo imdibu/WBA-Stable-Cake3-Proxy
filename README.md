@@ -159,7 +159,7 @@ a bad impact on the performance side.
 
 #### 2.3.2 In order to avoid naming conflict of classes between Cake3 and Cake2 application, some of the classes need to be changed in the config files accordingly:
 
-* Rename every ```Configuration``` class call to ```CConfiguration```
+* Rename every ```Configure``` class call to ```CConfigure```
 * Rename every ```App``` class call to ```CApp```
 
 In the following files:
