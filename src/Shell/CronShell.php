@@ -14,10 +14,9 @@ class CronShell extends Shell
 {
     public function main()
     {
-        global $defaultArgs;
         $arguments = func_get_args();
 
-        $dispatcher = new \CShellDispatcher(array_merge($defaultArgs, $arguments), false);
+        $dispatcher = new \CShellDispatcher($arguments, false);
         exit($dispatcher->dispatch() === false ? 1 : 0);
     }
 }
