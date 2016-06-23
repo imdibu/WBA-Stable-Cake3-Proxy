@@ -14,16 +14,9 @@ class CronShell extends Shell
 {
     public function main()
     {
-        $binPath = dirname(dirname(__DIR__)) . DS . 'bin' . DS . 'cake.php';
-        $appPath = dirname(dirname(__DIR__)) . DS . 'legacy' . DS . 'Project';
         $arguments = func_get_args();
 
-        $defaultArgs = [
-            0 => $binPath,
-            1 => '-working',
-            2 => $appPath
-        ];
-
-        \CShellDispatcher::run(array_merge($defaultArgs, $arguments));
+        $dispatcher = new \CShellDispatcher($arguments, false);
+        exit($dispatcher->dispatch() === false ? 1 : 0);
     }
 }
