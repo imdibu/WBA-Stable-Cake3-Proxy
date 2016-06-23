@@ -151,7 +151,9 @@ Create Session directory necessary for uploaded files
 ```bash
 mkdir -p legacy/Project/app/tmp/sessions
 mkdir -p legacy/Project/app/tmp/backend_uploads
-mkdir -p legacy/Project/app/tmp/processing_files
+mkdir -p legacy/Project/app/tmp/backend_uploads/processing_files
+mkdir -p legacy/Project/app/tmp/backend_uploads/system_processing
+mkdir -p legacy/Project/app/tmp/backend_uploads/bulk_upload_temp
 ```
 
 __Note:__ For performance related reasons these files need to be created manually. Checking on every run if these folder are created has

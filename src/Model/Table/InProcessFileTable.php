@@ -14,7 +14,7 @@ class InprocessFileTable extends CoatsTable
     {
         parent::initialize($config);
 
-        $this->table('coats_inprocess_files');
+        $this->table('coats_in_process_files');
         $this->displayField('id');
         $this->primaryKey('id');
     }

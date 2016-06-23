@@ -19,7 +19,7 @@ namespace App\Model\Entity;
  * @property int $sales_org_id
  * @property \App\Model\Entity\Base\SalesOrg $sales_org
  */
-class InprocessFile extends CoatsEntity
+class InProcessFile extends CoatsEntity
 {
 
     /**
