@@ -102,7 +102,10 @@ mkdir -p webroot/min-js
 
 ### 2.3 Configure legacy application
 
-TODO: Adapt cake2 configuration based on cake3 environment variable.
+These steps are intended for setting up a development environment, not the production environment.
+Some of the steps need to be skipped or changed for the production environment.
+
+#### 2.3.1 Setup general application configuration and folders
 
 Set application environment as QA: ``SetEnv ENV qa`` in the virtual host
 
@@ -116,7 +119,8 @@ RewriteRule ^(.*)$ https://wcs.coatscolourexpress.com [R=301,L]
 php_value session.cookie_domain ".coatscolourexpress.com"
 ```
 
-Copy configuration files for cake2 application
+Copy default configuration files for cake2 application. Detailed instruction of what are the actual changes for these files
+will be provided in the next subchapters.
 
 ```bash
 cp -r build/legacy/config/* legacy/Project/app/Config/
@@ -129,25 +133,75 @@ mkdir -p legacy/Project/app/tmp/cache/persistent
 mkdir -p legacy/Project/app/tmp/cache/models
 ```
 
-Create JS and CSS folders
+Create JS and CSS temporary folders
 
 ```bash
 mkdir -p legacy/Project/app/tmp/cache/css
 mkdir -p legacy/Project/app/tmp/cache/js
 ```
 
+Create logs folder
+
+```bash
+mkdir -p legacy/Project/app/tmp/logs
+```
+
 Create Session directory necessary for uploaded files
 
 ```bash
 mkdir -p legacy/Project/app/tmp/sessions
+mkdir -p legacy/Project/app/tmp/backend_uploads
+mkdir -p legacy/Project/app/tmp/processing_files
 ```
 
-#### 2.3.2 Use custom SQL Model
+__Note:__ For performance related reasons these files need to be created manually. Checking on every run if these folder are created has
+a bad impact on the performance side.
 
-Configure in config/database.php
+#### 2.3.2 In order to avoid naming conflict of classes between Cake3 and Cake2 application, some of the classes need to be changed in the config files accordingly:
+
+* Rename every ```Configuration``` class call to ```CConfiguration```
+* Rename every ```App``` class call to ```CApp```
+
+In the following files:
+
+* ```legacy/Project/app/Config/bootstrap.php```
+* ```legacy/Project/app/Config/core.php```
+
+#### 2.3.3 Use custom SQL Model
+
+In order to have the two cake application linked together at the ORM level, we need to use a custom glue class that will handle that for us. 
+Configure this class in ```legacy/Project/app/Config/database.php```
 
 ```bash
 public $default = array(
     'datasource' => 'SqlserverExtended'
 )
 ```
+
+#### 2.3.4 Configure cached data to be stored into Redis server
+
+Configure this in ```legacy/Project/app/Config/core.php```
+
+```bash
+$engine = 'Redis';
+```
+
+#### 2.3.5 Configure session to be stored into Redis server
+
+Configure this in ```legacy/Project/app/Config/core.php```
+
+```bash
+CConfigure::write('Session', array(
+    'defaults' => 'cache',
+    'handler' => array(
+        'config' => 'session',
+    )
+));
+
+Cache::config ('session', array (
+    'engine' => $engine,
+    'prefix' => $prefix . 'cake_session_',
+    'duration' => 12 * 3600
+));
+```
+
