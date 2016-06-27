@@ -37,8 +37,10 @@ class BulkOrderLineProxy3 extends BaseModelProxy3
     {
         $data = array_combine($fields, $values);
 
-        $fields[] = 'unique_hash';
-        $values[] = $this->unique_hash($data['line_no'], $data['order_id']);
+        if (isset($data['line_no']) && isset($data['order_id'])) {
+            $fields[] = 'unique_hash';
+            $values[] = $this->unique_hash($data['line_no'], $data['order_id']);
+        }
 
         return parent::update($model, $fields, $values);
     }

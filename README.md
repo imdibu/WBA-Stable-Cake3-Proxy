@@ -144,6 +144,7 @@ Create logs folder
 
 ```bash
 mkdir -p legacy/Project/app/tmp/logs
+mkdir -p legacy/Project/app/tmp/logs/debug
 ```
 
 Create Session directory necessary for uploaded files
