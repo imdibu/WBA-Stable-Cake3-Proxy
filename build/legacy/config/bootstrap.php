@@ -369,7 +369,7 @@ switch (CConfigure::read('env')) {
         break;
     case 'qa':
 	define('SAMPLE_ORDER_NO_START', 10000000);
-        define('BULK_ORDER_NO_START', 5000000);
+        define('BULK_ORDER_NO_START', 50000000);
 	//colin suggetion based on WBA-277 (related to WBA-281)
 	//**** Used web services**********
 	//working changes
