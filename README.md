@@ -206,5 +206,21 @@ Cache::config ('session', array (
     'prefix' => $prefix . 'cake_session_',
     'duration' => 12 * 3600
 ));
+
+/*
+ * OR
+ */
+
+
+/**
+ * Configuration with database selection
+ */
+Cache::config('session', array (
+    'engine' => $engine,
+    'prefix' => $prefix . 'cake_session_',
+    'duration' => 12 * 3600,
+    // database must be a numeric index, 0 (zero) is the default one
+    'database' => 1
+));
 ```
 

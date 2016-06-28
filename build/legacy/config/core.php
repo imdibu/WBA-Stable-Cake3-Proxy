@@ -358,5 +358,6 @@ Cache::config('_cake_model_', array(
 Cache::config ('session', array (
     'engine' => $engine,
     'prefix' => $prefix . 'cake_session_',
-    'duration' => 12 * 3600
+    'duration' => 12 * 3600,
+    'database' => 1,
 ));
