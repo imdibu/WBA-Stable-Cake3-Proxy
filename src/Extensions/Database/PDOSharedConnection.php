@@ -16,37 +16,23 @@ class PDOSharedConnection
      * @var PDOSharedConnection
      */
     protected static $instance;
-    protected $connection;
 
     protected $transactionStarted = false;
     protected $transactionNesting = 0;
 
-    private function __construct($dsn, array $config)
+    private function __construct()
     {
-        $this->connection = new PDO(
-            $dsn,
-            $config['username'],
-            $config['password'],
-            $config['flags']
-        );
+        $this->transactionStarted = false;
+        $this->transactionNesting = 0;
     }
 
-    public static function getInstance($dsn = null, array $config = null)
+    public static function getInstance()
     {
-        if (self::$instance === null && ($dsn === null || $config === null)) {
-            throw new \MissingDatabaseException('No database connection string exists in config');
-        }
-
         if (self::$instance === null) {
-            self::$instance = new self($dsn, $config);
+            self::$instance = new self();
         }
 
         return self::$instance;
-    }
-
-    public function getConnection()
-    {
-       return self::$instance->connection;
     }
 
     public function setTransactionStatus($started = false, $nesting = 0)

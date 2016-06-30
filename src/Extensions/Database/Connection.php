@@ -45,4 +45,13 @@ class Connection extends \Cake\Database\Connection
 
         return $transactionCommited;
     }
+
+    public function rollback()
+    {
+        $this->getCurrentTransactionInfo();
+        $transactionRollback = parent::rollback();
+        $this->setCurrentTransactionInfo();
+
+        return $transactionRollback;
+    }
 }

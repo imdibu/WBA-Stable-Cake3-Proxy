@@ -61,84 +61,16 @@
  */
 class DATABASE_CONFIG {
 
-// For MSSQL
-
-
-
-
-  /*public $default = array(
-		'datasource' => 'Database/Sqlserver',
-		'persistent' => false,
-		'host' => '10.14.14.6',
-		'login' => 'svcwcs',
-		'password' => 'svcwcs',
-		//'database' => 'coats_qa_p4i',
-		'database' => 'coats_wba_p4i_Axian',
-		'prefix' => 'coats_',	
-	);*/
-
      public $default = array(
         'datasource' => 'SqlserverExtended',
-        'persistent' => false,
-        'host' => 'Server=PETRICA;database=coats_wba_p4i_hk',
-        'login' => 'sa',
-        'password' => 'root123',
-        //'database' => 'coats_wba_p4i_hk',
-        'database' =>'coats_wba_p4i_hk',
         'prefix' => 'coats_'
-            //'encoding'  => PDO::SQLSRV_ENCODING_UTF8
     );
 
-//   public $default = array(
-//       'datasource' => 'Database/Sqlserver',
-//       'persistent' => false,
-//       'host' => 'Server=10.4.255.7,10101;database=coats_qa_p4i',
-//       'login' => 'wcsqa',
-//       'password' => 'P@$$w0rd',
-//       'database' => 'coats_qa_p4i',
-//      //'database' => 'coats_test_p4i',
-//       'prefix' => 'coats_',
-//   );
-    
-    
-   /* public $default = array(
-        'datasource' => 'Database/Sqlserver',
-        'persistent' => false,
-        'host' => '10.4.255.6',
-        'login' => 'coaadm',
-        'password' => 'Password@123',
-        'database' => 'coats_wba_p4i',
-        'prefix' => 'coats_',
-            //'encoding'  => PDO::SQLSRV_ENCODING_UTF8
-    );*/
-    
-    
-    
-   /* public $default = array(
-        'datasource' => 'Database/Sqlserver',
-        'persistent' => false,
-        'host' => '127.0.0.1',
-        'login' => 'sa',
-        'password' => 'sa',
-        'database' => 'coats_wba_hk_20160103',
-        'prefix' => 'coats_',
-            //'encoding'  => PDO::SQLSRV_ENCODING_UTF8
-    );*/
-//    public $sandb = array(
-//        'datasource' => 'Database/Sqlserver',
-//        'persistent' => false,
-//        'host' => 'PETRICA',
-//        'login' => 'sa',
-//        'password' => 'root123',
-//        'database' => 'coats_wba_p4i_hk',
-//        'prefix' => 'coats_',
-//        'encoding' => PDO::SQLSRV_ENCODING_UTF8
-//    );
     public $default_ = array(
         'datasource' => 'ArraySource'
     );
+
     public $array = array(
         'datasource' => 'ArraySource'
     );
-
 }

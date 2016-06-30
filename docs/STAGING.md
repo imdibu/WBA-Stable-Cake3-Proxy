@@ -58,7 +58,7 @@ max_execution_time = 120
 max_input_time = 120
 
 # Manual order is submitting a lot of info
-max_input_vars = 2000
+max_input_vars = 5000
 
 # Enable extensions:
 

@@ -52,7 +52,7 @@ class Sqlserver extends Driver
         $config['flags'] += [
             PDO::ATTR_PERSISTENT => $config['persistent'],
             PDO::ATTR_EMULATE_PREPARES => false,
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+//            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION // ToDO: Tremend Throw errors in the future in order to find borken queries
         ];
 
         if (!empty($config['encoding'])) {
@@ -73,13 +73,6 @@ class Sqlserver extends Driver
                 $connection->exec("SET {$key} {$value}");
             }
         }
-        return true;
-    }
-
-    protected function _connect($dsn, array $config)
-    {
-        $connection = PDOSharedConnection::getInstance($dsn, $config)->getConnection();
-        $this->connection($connection);
         return true;
     }
 

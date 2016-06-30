@@ -139,7 +139,10 @@ abstract class BaseModelProxy3
         $entity = $this->modelTable->get($model->id);
         $this->assign($entity, $data);
 
-        return (bool) $this->modelTable->save($entity);
+        return (bool) $this->modelTable->save($entity, array(
+            'atomic' => false,
+            'associated' => false
+        ));
     }
 
     /**
