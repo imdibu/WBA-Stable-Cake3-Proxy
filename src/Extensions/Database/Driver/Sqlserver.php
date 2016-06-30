@@ -9,6 +9,7 @@
 namespace App\Extensions\Database\Driver;
 
 use App\Extensions\Database\Dialect\SqlserverDialectTrait;
+use App\Extensions\Database\PDOSharedConnection;
 use Cake\Database\Driver;
 use Cake\Database\Query;
 use Cake\Database\Statement\SqlserverStatement;
@@ -72,6 +73,13 @@ class Sqlserver extends Driver
                 $connection->exec("SET {$key} {$value}");
             }
         }
+        return true;
+    }
+
+    protected function _connect($dsn, array $config)
+    {
+        $connection = PDOSharedConnection::getInstance($dsn, $config)->getConnection();
+        $this->connection($connection);
         return true;
     }
 
