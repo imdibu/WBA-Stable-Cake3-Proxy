@@ -317,7 +317,7 @@ date_default_timezone_set('UTC');
  *       Please check the comments in boostrap.php for more info on the cache engines available
  *       and their setttings.
  */
-$engine = 'Redis';
+$engine = 'RedisNew';
 
 // In development mode, caches should expire quickly.
 $duration = '+999 days';
