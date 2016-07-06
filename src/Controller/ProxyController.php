@@ -8,13 +8,27 @@
 
 namespace App\Controller;
 
-use App\Services\Cake2Bootstrapper;
+use App\Services\Network\ResponseCake2;
+use Cake\Network\Response;
 
 class ProxyController extends AppController
 {
     public function reroute()
     {
-        Cake2Bootstrapper::run();
-        die();
+        $request = new \CakeRequest();
+        // Fool cake2 in not returning the content for
+        $request->params['return'] = '';
+
+        $response = new ResponseCake2(array('charset' => \CConfigure::read('App.encoding')));
+
+        // Dispatch request
+        $Dispatcher = new \CDispatcher();
+        $Dispatcher->dispatch($request, $response);
+
+        // Process after dispatch
+        $afterEvent = new \CakeEvent('CDispatcher.afterDispatch', $this, compact('request', 'response'));
+        $Dispatcher->getEventManager()->dispatch($afterEvent);
+
+        return $response->getCake3Response();
     }
 }

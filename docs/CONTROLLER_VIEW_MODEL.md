@@ -1,4 +1,4 @@
-# Tutorial - Create a new controller with a new model and persist changes to database tutorial
+# Tutorial - Create a new controller with a new model and persist changes to database
 
 ## 1. Create a new controller
 
@@ -14,10 +14,9 @@ php bin/cake.php cron bake
 
 Simply choose to create a new controller, use the default database connection (just hit return).
 The shell will list all controllers that the application already have and prompt user to enter a new controller.
-After that simply hit return on with default answer for all following questions.
+After that simply hit return for every default answer already in place.
 
-Let's call the controller ```Tutorial``` this will create a new file called ```TutorialController``` under 
-```legacy\Project\app\Controller\TutorialController.php```
+Let's call the controller ```Tutorial``` this will create a new file called ```TutorialController``` under ```legacy\Project\app\Controller\TutorialController.php```
 
 ## 2. Create a view for our controller
 
@@ -37,6 +36,17 @@ This will create a new file under: ```\legacy\Project\app\View\Tutorial\index.ct
 
 ## 3. Create a new model in Cake2
 
+Create a new table in the database by running the following query:
+
+```sql
+CREATE TABLE coats_tutorials
+(
+id int PRIMARY KEY IDENTITY (1,1) NOT NULL,
+first_name varchar(255),
+last_name varchar(255)
+);
+```
+
 Now let's create new model, again with the help of the CLI script:
 
 ```bash
@@ -48,21 +58,9 @@ php bin/cake.php cron bake
 ```
 
 Choose to create a new model, use the default database connection and choose the name of the model, let's call it
-```Tutorial``` also. Update table name or use the default table name provided. Continue anyway even if the table could
-not be automatically detected. Set the primary key as ```id``` and choose to create the file.
+```Tutorial``` also. Update table name or use the default table name provided. Set the primary key as ```id``` and choose to create the file.
 
 The model will be available at ```legacy\Project\app\Model\Tutorial.php```.
-
-Create a new table in the database by running the following query:
-
-```sql
-CREATE TABLE coats_tutorials
-(
-id int PRIMARY KEY IDENTITY (1,1) NOT NULL,
-first_name varchar(255),
-last_name varchar(255)
-);
-```
 
 ## 4. Create a new model in Cake3
 
@@ -136,7 +134,11 @@ Also update the view to display the newly created tuple:
 <?php echo $tutorial->id ?>
 ```
 
+To test this, simply go to ```http://[APPLICATION_URL]/Tutorial
 
+## Important notes:
+
+* Model primary key field should always be ```id```. Cake3 assumes that this is the primary key for every model.
 
 
 
