@@ -10,7 +10,7 @@ $coats_cake2_config = [
 
 $COATS2_ROOT = $coats_cake2_config['legacyRoot'];
 
-if (!include($COATS2_ROOT . $DS . 'lib' . $DS . 'Cake' . $DS . 'Console' . $DS . 'CShellDispatcher.php')) {
+if (!include($COATS2_ROOT . $DS . 'lib' . $DS . 'Cake' . $DS . 'Console' . $DS . 'ShellDispatcher.php')) {
     $failed = true;
 }
 
@@ -23,7 +23,7 @@ $defaultArgs = [
 ];
 
 // bootstraping
-$tmp = new CShellDispatcher($defaultArgs);
+$tmp = new ShellDispatcher($defaultArgs);
 unset($tmp);
 
 if (!empty($failed)) {

@@ -16,7 +16,7 @@ class CronShell extends Shell
     {
         $arguments = func_get_args();
 
-        $dispatcher = new \CShellDispatcher($arguments, false);
+        $dispatcher = new \ShellDispatcher($arguments, false);
         exit($dispatcher->dispatch() === false ? 1 : 0);
     }
 }
