@@ -77,8 +77,6 @@ zend_extension=C:\php55\ext\php_opcache.dll
 
 opcache.enable=1
 
-opcache.enable_cli=1
-
 opcache.memory_consumption=512M
 ```
 
