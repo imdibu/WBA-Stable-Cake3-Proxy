@@ -61,7 +61,7 @@
  */
 class DATABASE_CONFIG {
 
-     public $default = array(
+    public $default = array(
         'datasource' => 'SqlserverExtended',
         'prefix' => 'coats_'
     );

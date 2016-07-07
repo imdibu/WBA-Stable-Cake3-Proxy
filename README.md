@@ -5,23 +5,33 @@
 
 ## 1. Requirements
 
-PHP 5.5.x (win intl extension enabled)
-Composer
-MSSQL Server 2014
+* PHP 5.5.x (win intl extension enabled)
+    * php_intl.dll (comes with PHP)
+    * php_curl.dll (comse with PHP)
+    * php_pdo_sqlite.dll (comes with PHP - for development toolbar for cake3)
+    * php_soap.dll (comes with PHP)
+    * php_redis.dll (download the TS version for PHP 5.5 version: https://pecl.php.net/package/redis/2.2.7/windows)
+    * php_sqlsrv_55_ts.dll (windows MSSQL PHP driver: https://www.microsoft.com/en-us/download/details.aspx?id=20098)
+    * php_pdo_sqlsrv_55_ts.dll (windows MSSQL PHP driver: https://www.microsoft.com/en-us/download/details.aspx?id=20098)
+* PHP Composer (https://getcomposer.org/download/)
+* Redis server (https://github.com/MSOpenTech/redis/releases/tag/win-3.0.501)
+* MSSQL Server 2014
 
 ## 2. Installation
 
 ### 2.1 Checkout sources
 
-Checkout application sources from git
+Checkout application sources from git into the desired folder:
 
 ```bash
-git clone git@bitbucket.org:tremend/coats_proxy.git
+git clone git@github.com:Coats/WBA-Stable-Cake3-Proxy.git [PROJECT_FOLDER]
 ```
 
-Run composer
+Enter in the [PROJECT_FODLER] and run composer install to fetch the vendors source code
 
 ```bash
+cd [PROJECT_FOLDER]
+
 composer install
 ```
 
@@ -30,6 +40,16 @@ Install legacy application as a git submodule:
 ```bash
 git submodule update --init --recursive
 ```
+
+Just to be sure that everything is checkout correctly, have a look at the checkout data and do a git status:
+
+```bash
+cd [PROJECT_FOLDER]/legacy
+
+git status
+```
+
+This should list the master branch and should have everything up to date. If not, do a ```git pull```
 
 ### 2.2 Configure application
 
@@ -45,13 +65,20 @@ config/app.php
 
 #### 2.2.2 Cache in Redis
 
-Configure cache to use the Redis server:
+Configure cache for Cake3 to use the Redis server:
 
 ```bash
+# config/app.php
+
 'Cache' => [
-        'default' => [
-            'className' => 'Redis',
-        ]
+    'default' => [
+        'className' => 'Redis',
+        'server' => 'localhost',
+        'port' => 6379,
+        'timeout' => 5,
+        'password' => null,
+        'persistent' => false
+    ]
 ],
 
 ...
@@ -72,6 +99,8 @@ Configure cache to use the Redis server:
 Cake2 application is triggering a lot of warnings, so not the best way to handle this, but for now exclude warnings from logging
 
 ```bash
+# config/app.php
+
 'Error' => [
     'errorLevel' => E_ALL & ~E_DEPRECATED & ~E_STRICT & ~E_NOTICE & ~E_WARNING,
 ]
@@ -79,14 +108,23 @@ Cake2 application is triggering a lot of warnings, so not the best way to handle
 
 #### 2.2.4 MSSQL Driver
 
-Configure application to use the MSSQL Driver and PDO UTF8 encoding
+Configure application to use the MSSQL Driver, a poroxy Connection handler in order for both applications to use
+the same database connection and PDO UTF8 encoding
 
 ```bash
+# config/app.php
+
 'Datasources' => [
     'default' => [
+        'className' => 'App\Extensions\Database\Connection',
         'driver' => 'App\Extensions\Database\Driver\Sqlserver',
         'encoding' => PDO::SQLSRV_ENCODING_UTF8,
-        'quoteIdentifiers' => true
+        'quoteIdentifiers' => true,
+        
+        'host' => '[HOST]',
+        'username' => '[USER]',
+        'password' => '[PASSWORD]',
+        'database' => '[DATABASE_NAME]',
     ]
 ]
 ```
