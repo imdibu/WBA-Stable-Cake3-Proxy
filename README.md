@@ -272,7 +272,7 @@ Cache::config('session', array(
 
 ## <a name="docs"></a>3. Additional docs
 
-* [Setting up a server hosting the application](docs/STATING.md)
+* [Setting up a server hosting the application](docs/STAGING.md)
 * [Development Tips & Tricks (how to clear cache, run cron, log errors)](docs/DEVELOPMENT.md)
 * [Tutorial how to create a new controller, model, view in Cake3 proxy over Cake2](docs/CONTROLLER_VIEW_MODEL.md)
 * [Going live checklist](docs/CHECKLIST.MD)
