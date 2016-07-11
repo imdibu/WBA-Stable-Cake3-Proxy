@@ -99,7 +99,7 @@ return [
             'prefix' => 'myapp_cake_core_',
             'path' => CACHE . 'persistent/',
             'serialize' => true,
-            'duration' => '+2 minutes',
+            'duration' => '+10 seconds',
             'url' => env('CACHE_CAKECORE_URL', null),
         ],
 
@@ -114,7 +114,7 @@ return [
             'prefix' => 'myapp_cake_model_',
             'path' => CACHE . 'models/',
             'serialize' => true,
-            'duration' => '+2 minutes',
+            'duration' => '+10 seconds',
             'url' => env('CACHE_CAKEMODEL_URL', null),
         ],
     ],
