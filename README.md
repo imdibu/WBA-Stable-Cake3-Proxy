@@ -138,6 +138,12 @@ mkdir -p webroot/min-css
 mkdir -p webroot/min-js
 ```
 
+If you change the CSS and/or JS files you will have to delete the files under ```webroot/min-css``` respectively under
+```webroot/min-js```.
+
+One every run, the application will try to create the minified versions of all the CSS and JS files under ```webroot/min-css```
+and ```webroot/min-js``` respectively.
+
 ### 2.3 Configure legacy application
 
 These steps are intended for setting up a development environment, not the production environment.
@@ -147,7 +153,8 @@ Some of the steps need to be skipped or changed for the production environment.
 
 Set application environment as QA: ``SetEnv ENV qa`` in the virtual host
 
-Comment the following lines inside .htaccess file:
+Comment the following lines inside .htaccess file. The rewrite conditions enforces the browser to redirect the client
+to the subdomain of the application.
 
 ```
 RewriteCond %{HTTP_HOST} wcs.coatscolorexpress.com$ [NC]
@@ -185,7 +192,7 @@ mkdir -p legacy/Project/app/tmp/logs
 mkdir -p legacy/Project/app/tmp/logs/debug
 ```
 
-Create Session directory necessary for uploaded files
+Create Session directory necessary for uploaded files and additional tempory folders used by the SAP controller.
 
 ```bash
 mkdir -p legacy/Project/app/tmp/sessions
@@ -195,8 +202,8 @@ mkdir -p legacy/Project/app/tmp/backend_uploads/system_processing
 mkdir -p legacy/Project/app/tmp/backend_uploads/bulk_upload_temp
 ```
 
-__Note:__ For performance related reasons these files need to be created manually. Checking on every run if these folder are created has
-a bad impact on the performance side.
+__Note:__ For performance related reasons these folders are created manually. Checking on every run if these folder are created has
+an impact on the performance side.
 
 #### 2.3.2 In order to avoid naming conflict of classes between Cake3 and Cake2 application, some of the classes need to be changed in the config files accordingly:
 
@@ -224,7 +231,7 @@ public $default = array(
 Configure this in ```legacy/Project/app/Config/core.php```
 
 ```bash
-$engine = 'Redis';
+$engine = 'RedisNew';
 ```
 
 #### 2.3.5 Configure session to be stored into Redis server
@@ -251,9 +258,9 @@ Cache::config ('session', array (
 
 
 /**
- * Configuration with database selection
+ * Configuration storing the session information into a different Redis database by explicitly specifying the database to use: 
  */
-Cache::config('session', array (
+Cache::config('session', array(
     'engine' => $engine,
     'prefix' => $prefix . 'cake_session_',
     'duration' => 12 * 3600,
@@ -261,4 +268,3 @@ Cache::config('session', array (
     'database' => 1
 ));
 ```
-
