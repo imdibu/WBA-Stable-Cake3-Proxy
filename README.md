@@ -1,9 +1,10 @@
 # Coats WBA
 
-1. Requirements
-2. Installation
+1. [Requirements](#requirements)
+2. [Installation](#installation)
+3. [Additional docs](#docs)
 
-## 1. Requirements
+## <a name="requirements"></a>1. Requirements
 
 * PHP 5.5.x (win intl extension enabled)
     * php_intl.dll (comes with PHP)
@@ -17,7 +18,7 @@
 * Redis server (https://github.com/MSOpenTech/redis/releases/tag/win-3.0.501)
 * MSSQL Server 2014
 
-## 2. Installation
+## <a name="installation"></a>2. Installation
 
 ### 2.1 Checkout sources
 
@@ -268,3 +269,10 @@ Cache::config('session', array(
     'database' => 1
 ));
 ```
+
+## <a name="docs"></a>3. Additional docs
+
+* [Setting up a server hosting the application](docs/STATING.md)
+* [Development Tips & Tricks (how to clear cache, run cron, log errors)](docs/DEVELOPMENT.md)
+* [Tutorial how to create a new controller, model, view in Cake3 proxy over Cake2](docs/CONTROLLER_VIEW_MODEL.md)
+* [Going live checklist](docs/CHECKLIST.MD)
