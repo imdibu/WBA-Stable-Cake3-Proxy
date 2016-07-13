@@ -46,33 +46,35 @@ Edit php.ini
 ```ini
 memory_limit = 512M
 
-upload_tmp_dir = C:/php55/tmp
+upload_max_filesize = 32M
 
-upload_max_filesize = 128M
+post_max_size = 128M
 
 extension_dir = "C:/php55/ext"
 
-# SAP is taking a long time to process requests, extend time for SAP to answer
+; SAP is taking a long time to process requests, extend time for SAP to answer
 max_execution_time = 120
 
 max_input_time = 120
 
-# Manual order is submitting a lot of info
+; Manual order is submitting a lot of info
 max_input_vars = 5000
 
-# Enable extensions:
+; Enable extensions:
 
 extension=php_bz2.dll
+extension=php_gd2.dll
 extension=php_curl.dll
 extension=php_intl.dll
 extension=php_mbstring.dll
-extension=php_pdo_mysql.dll
+extension=php_openssl.dll
+extension=php_soap.dll
 
-# Enable SQL Server Extension
+; Enable SQL Server Extension
 extension=php_sqlsrv_55_ts.dll
 extension=php_pdo_sqlsrv_55_ts.dll
 
-# Activate OPCache
+; Activate OPCache
 zend_extension=C:\php55\ext\php_opcache.dll
 
 opcache.enable=1

@@ -54,7 +54,9 @@ This should list the master branch and should have everything up to date. If not
 
 ### 2.2 Configure application
 
-#### 2.2.1 Create a new app.php file from the sample one app.default.php
+#### 2.2.1 Create a new app.php file from the sample one app.default.php (composer install already does that)
+
+This is what composer already did, so you may skip this step.
 
 ```bash
 # copy cake3 configuration sample
@@ -175,32 +177,32 @@ cp -r build/legacy/config/* legacy/Project/app/Config/
 Create cache folders
 
 ```bash
-mkdir -p legacy/Project/app/tmp/cache/persistent
-mkdir -p legacy/Project/app/tmp/cache/models
+mkdir legacy\Project\app\tmp\cache\persistent
+mkdir legacy\Project\app\tmp\cache\models
 ```
 
 Create JS and CSS temporary folders
 
 ```bash
-mkdir -p legacy/Project/app/tmp/cache/css
-mkdir -p legacy/Project/app/tmp/cache/js
+mkdir legacy\Project\app\tmp\cache\css
+mkdir legacy\Project\app\tmp\cache\js
 ```
 
 Create logs folder
 
 ```bash
-mkdir -p legacy/Project/app/tmp/logs
-mkdir -p legacy/Project/app/tmp/logs/debug
+mkdir legacy\Project\app\tmp\logs
+mkdir legacy\Project\app\tmp\logs\debug
 ```
 
 Create Session directory necessary for uploaded files and additional tempory folders used by the SAP controller.
 
 ```bash
-mkdir -p legacy/Project/app/tmp/sessions
-mkdir -p legacy/Project/app/tmp/backend_uploads
-mkdir -p legacy/Project/app/tmp/backend_uploads/processing_files
-mkdir -p legacy/Project/app/tmp/backend_uploads/system_processing
-mkdir -p legacy/Project/app/tmp/backend_uploads/bulk_upload_temp
+mkdir legacy\Project\app\tmp\sessions
+mkdir legacy\Project\app\tmp\backend_uploads
+mkdir legacy\Project\app\tmp\backend_uploads\processing_files
+mkdir legacy\Project\app\tmp\backend_uploads\system_processing
+mkdir legacy\Project\app\tmp\backend_uploads\bulk_upload_temp
 ```
 
 __Note:__ For performance related reasons these folders are created manually. Checking on every run if these folder are created has
