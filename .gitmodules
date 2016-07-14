@@ -2,3 +2,6 @@
 	path = legacy
 	url = git@github.com:Coats/WBA-Stable.git
 	branch = master
+[submodule "mobile"]
+	path = mobile
+	url = git@github.com:Coats/wba-mobile.git

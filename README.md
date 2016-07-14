@@ -272,6 +272,10 @@ Cache::config('session', array(
 ));
 ```
 
+#### 2.3.6 Configure mobile application
+
+TODO: In progress
+
 ## <a name="docs"></a>3. Additional docs
 
 * [Setting up a server hosting the application](docs/STAGING.md)
